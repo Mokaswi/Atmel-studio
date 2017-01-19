@@ -1,0 +1,3245 @@
+
+Tribot_version3_final.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000fec  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000a  00800060  00000fec  00001080  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000005c  0080006a  0080006a  0000108a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000108a  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000010bc  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000280  00000000  00000000  000010fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000042af  00000000  00000000  0000137c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000011b6  00000000  00000000  0000562b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001665  00000000  00000000  000067e1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000006d8  00000000  00000000  00007e48  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000016f0  00000000  00000000  00008520  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001be9  00000000  00000000  00009c10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000002c8  00000000  00000000  0000b7f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	6d c0       	rjmp	.+218    	; 0xdc <__dtors_end>
+   2:	d3 c6       	rjmp	.+3494   	; 0xdaa <__vector_1>
+   4:	08 c7       	rjmp	.+3600   	; 0xe16 <__vector_2>
+   6:	8f c0       	rjmp	.+286    	; 0x126 <__bad_interrupt>
+   8:	8e c0       	rjmp	.+284    	; 0x126 <__bad_interrupt>
+   a:	8d c0       	rjmp	.+282    	; 0x126 <__bad_interrupt>
+   c:	4c c6       	rjmp	.+3224   	; 0xca6 <__vector_6>
+   e:	8b c0       	rjmp	.+278    	; 0x126 <__bad_interrupt>
+  10:	8a c0       	rjmp	.+276    	; 0x126 <__bad_interrupt>
+  12:	89 c0       	rjmp	.+274    	; 0x126 <__bad_interrupt>
+  14:	88 c0       	rjmp	.+272    	; 0x126 <__bad_interrupt>
+  16:	87 c0       	rjmp	.+270    	; 0x126 <__bad_interrupt>
+  18:	86 c0       	rjmp	.+268    	; 0x126 <__bad_interrupt>
+  1a:	85 c0       	rjmp	.+266    	; 0x126 <__bad_interrupt>
+  1c:	84 c0       	rjmp	.+264    	; 0x126 <__bad_interrupt>
+  1e:	83 c0       	rjmp	.+262    	; 0x126 <__bad_interrupt>
+  20:	82 c0       	rjmp	.+260    	; 0x126 <__bad_interrupt>
+  22:	81 c0       	rjmp	.+258    	; 0x126 <__bad_interrupt>
+  24:	80 c0       	rjmp	.+256    	; 0x126 <__bad_interrupt>
+  26:	7f c0       	rjmp	.+254    	; 0x126 <__bad_interrupt>
+  28:	7e c0       	rjmp	.+252    	; 0x126 <__bad_interrupt>
+
+0000002a <__trampolines_end>:
+  2a:	52 00       	.word	0x0052	; ????
+  2c:	5a 00       	.word	0x005a	; ????
+  2e:	60 00       	.word	0x0060	; ????
+  30:	55 00       	.word	0x0055	; ????
+  32:	71 00       	.word	0x0071	; ????
+  34:	50 00       	.word	0x0050	; ????
+  36:	7e 00       	.word	0x007e	; ????
+  38:	4e 00       	.word	0x004e	; ????
+  3a:	87 00       	.word	0x0087	; ????
+  3c:	4c 00       	.word	0x004c	; ????
+  3e:	90 00       	.word	0x0090	; ????
+  40:	4a 00       	.word	0x004a	; ????
+  42:	99 00       	.word	0x0099	; ????
+  44:	48 00       	.word	0x0048	; ????
+  46:	a3 00       	.word	0x00a3	; ????
+  48:	46 00       	.word	0x0046	; ????
+  4a:	ae 00       	.word	0x00ae	; ????
+  4c:	44 00       	.word	0x0044	; ????
+  4e:	ba 00       	.word	0x00ba	; ????
+  50:	42 00       	.word	0x0042	; ????
+  52:	c6 00       	.word	0x00c6	; ????
+  54:	40 00       	.word	0x0040	; ????
+  56:	d3 00       	.word	0x00d3	; ????
+  58:	3e 00       	.word	0x003e	; ????
+  5a:	e1 00       	.word	0x00e1	; ????
+  5c:	3c 00       	.word	0x003c	; ????
+  5e:	f0 00       	.word	0x00f0	; ????
+  60:	3a 00       	.word	0x003a	; ????
+  62:	00 01       	movw	r0, r0
+  64:	38 00       	.word	0x0038	; ????
+  66:	11 01       	movw	r2, r2
+  68:	36 00       	.word	0x0036	; ????
+  6a:	23 01       	movw	r4, r6
+  6c:	34 00       	.word	0x0034	; ????
+  6e:	36 01       	movw	r6, r12
+  70:	32 00       	.word	0x0032	; ????
+  72:	4b 01       	movw	r8, r22
+  74:	30 00       	.word	0x0030	; ????
+  76:	ff ff       	.word	0xffff	; ????
+	...
+
+0000007a <_ZN5Tasks18CRAWL_FORWARD_AUTOE>:
+  7a:	0a 04 32 0b 1e 0a 0a 00 19 0b 00 1e 08 04 32 07     ..2...........2.
+  8a:	16 00 0c 11 0a 08 00 19 ff 00 14                    ...........
+
+00000095 <_ZN5Tasks20CRAWL_FORWARD_MANUALE>:
+  95:	0a 0b 0a 0b 08 07 0c 08 ff                          .........
+
+0000009e <digital_pin_to_bit_mask_PGM>:
+  9e:	01 02 02 01 04 08 10 20 40 01 02 04 08 10 20 40     ....... @..... @
+  ae:	80 04                                               ..
+
+000000b0 <digital_pin_to_port_PGM>:
+  b0:	04 04 01 01 04 04 04 04 04 02 02 02 02 02 02 02     ................
+  c0:	02 01                                               ..
+
+000000c2 <port_to_output_PGM>:
+  c2:	00 00 3b 00 38 00 00 00 32 00                       ..;.8...2.
+
+000000cc <port_to_mode_PGM>:
+  cc:	00 00 3a 00 37 00 00 00 31 00                       ..:.7...1.
+
+000000d6 <__ctors_start>:
+  d6:	9e 05       	cpc	r25, r14
+  d8:	a3 07       	cpc	r26, r19
+
+000000da <__ctors_end>:
+  da:	ab 07       	cpc	r26, r27
+
+000000dc <__dtors_end>:
+  dc:	11 24       	eor	r1, r1
+  de:	1f be       	out	0x3f, r1	; 63
+  e0:	cf e5       	ldi	r28, 0x5F	; 95
+  e2:	d1 e0       	ldi	r29, 0x01	; 1
+  e4:	de bf       	out	0x3e, r29	; 62
+  e6:	cd bf       	out	0x3d, r28	; 61
+
+000000e8 <__do_copy_data>:
+  e8:	10 e0       	ldi	r17, 0x00	; 0
+  ea:	a0 e6       	ldi	r26, 0x60	; 96
+  ec:	b0 e0       	ldi	r27, 0x00	; 0
+  ee:	ec ee       	ldi	r30, 0xEC	; 236
+  f0:	ff e0       	ldi	r31, 0x0F	; 15
+  f2:	02 c0       	rjmp	.+4      	; 0xf8 <__do_copy_data+0x10>
+  f4:	05 90       	lpm	r0, Z+
+  f6:	0d 92       	st	X+, r0
+  f8:	aa 36       	cpi	r26, 0x6A	; 106
+  fa:	b1 07       	cpc	r27, r17
+  fc:	d9 f7       	brne	.-10     	; 0xf4 <__do_copy_data+0xc>
+
+000000fe <__do_clear_bss>:
+  fe:	20 e0       	ldi	r18, 0x00	; 0
+ 100:	aa e6       	ldi	r26, 0x6A	; 106
+ 102:	b0 e0       	ldi	r27, 0x00	; 0
+ 104:	01 c0       	rjmp	.+2      	; 0x108 <.do_clear_bss_start>
+
+00000106 <.do_clear_bss_loop>:
+ 106:	1d 92       	st	X+, r1
+
+00000108 <.do_clear_bss_start>:
+ 108:	a6 3c       	cpi	r26, 0xC6	; 198
+ 10a:	b2 07       	cpc	r27, r18
+ 10c:	e1 f7       	brne	.-8      	; 0x106 <.do_clear_bss_loop>
+
+0000010e <__do_global_ctors>:
+ 10e:	10 e0       	ldi	r17, 0x00	; 0
+ 110:	cd e6       	ldi	r28, 0x6D	; 109
+ 112:	d0 e0       	ldi	r29, 0x00	; 0
+ 114:	03 c0       	rjmp	.+6      	; 0x11c <__do_global_ctors+0xe>
+ 116:	21 97       	sbiw	r28, 0x01	; 1
+ 118:	fe 01       	movw	r30, r28
+ 11a:	56 d7       	rcall	.+3756   	; 0xfc8 <__tablejump2__>
+ 11c:	cb 36       	cpi	r28, 0x6B	; 107
+ 11e:	d1 07       	cpc	r29, r17
+ 120:	d1 f7       	brne	.-12     	; 0x116 <__do_global_ctors+0x8>
+ 122:	8b d3       	rcall	.+1814   	; 0x83a <main>
+ 124:	57 c7       	rjmp	.+3758   	; 0xfd4 <__do_global_dtors>
+
+00000126 <__bad_interrupt>:
+ 126:	6c cf       	rjmp	.-296    	; 0x0 <__vectors>
+
+00000128 <_Z5setupv>:
+  }
+}
+void setup(void) {
+  //
+  //initialize register variables,   register variables are declared in wiring.h
+	SFlags = 0;
+ 128:	51 2c       	mov	r5, r1
+  rx_BytesAvail = 0;
+ 12a:	21 2c       	mov	r2, r1
+  rx_LastRead = 0;
+ 12c:	31 2c       	mov	r3, r1
+  Infrared_Idx = LEN_INFRARED_BOM;;
+ 12e:	44 24       	eor	r4, r4
+ 130:	43 94       	inc	r4
+  Locomotion = NULL;
+ 132:	61 2c       	mov	r6, r1
+ 134:	71 2c       	mov	r7, r1
+  //
+  //set registers for timer0 interrupt and PWM
+  //prescaler is 64 and mode is fast PWMs(Now frequence of PWM is 8MHz/64*256 = 488.28125 kHz
+  TCCR0A |= _BV(WGM01) | _BV(WGM00);					//set mode of timer0 fast PWM
+ 136:	80 b7       	in	r24, 0x30	; 48
+ 138:	83 60       	ori	r24, 0x03	; 3
+ 13a:	80 bf       	out	0x30, r24	; 48
+  TCCR0B |= _BV(CS01) | _BV(CS00);						//set prescaler of timer0 64
+ 13c:	83 b7       	in	r24, 0x33	; 51
+ 13e:	83 60       	ori	r24, 0x03	; 3
+ 140:	83 bf       	out	0x33, r24	; 51
+  TCCR1A |= _BV(WGM10);														//set mode of timer1 fast PWM
+ 142:	8f b5       	in	r24, 0x2f	; 47
+ 144:	81 60       	ori	r24, 0x01	; 1
+ 146:	8f bd       	out	0x2f, r24	; 47
+  TCCR1B |= _BV(WGM12) | _BV(CS11) | _BV(CS10);		//and set prescaler of timer1 64
+ 148:	8e b5       	in	r24, 0x2e	; 46
+ 14a:	8b 60       	ori	r24, 0x0B	; 11
+ 14c:	8e bd       	out	0x2e, r24	; 46
+  TIMSK |= _BV(TOIE0);														//enable timer0 interrupt
+ 14e:	89 b7       	in	r24, 0x39	; 57
+ 150:	82 60       	ori	r24, 0x02	; 2
+ 152:	89 bf       	out	0x39, r24	; 57
+  sei();																					//enable interrput flag
+ 154:	78 94       	sei
+  //
+  //set ID and ROLE
+	Tribot.setId(ID);
+ 156:	62 e0       	ldi	r22, 0x02	; 2
+ 158:	8e e8       	ldi	r24, 0x8E	; 142
+ 15a:	90 e0       	ldi	r25, 0x00	; 0
+ 15c:	95 d3       	rcall	.+1834   	; 0x888 <_ZN8Robogami5setIdEh>
+	////////////////////////////////////////////////////////////////////////////////////////////////You might have to change from here!////////////////////////////////////////////////////////
+  #if ID == 1
+  Tribot.setRole(LEADER);
+  #elif ID == 2
+  Tribot.setRole(PUSH);
+ 15e:	67 e6       	ldi	r22, 0x67	; 103
+ 160:	8e e8       	ldi	r24, 0x8E	; 142
+ 162:	90 e0       	ldi	r25, 0x00	; 0
+ 164:	97 d3       	rcall	.+1838   	; 0x894 <_ZN8Robogami7setRoleEh>
+  #endif
+	////////////////////////////////////////////////////////////////////////////////////////////////You might have to change until here!////////////////////////////////////////////////////////
+  //
+  //Begin Tribot(Just set Pin mode for SMAs and LEDs)
+  //
+  Tribot.begin();
+ 166:	8e e8       	ldi	r24, 0x8E	; 142
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	86 d3       	rcall	.+1804   	; 0x878 <_ZN8Robogami5beginEv>
+  //
+  //Sensor initialization
+	//set current for measuring(set to maximum current 200mA, which allow sensor to measure fare)
+  //if you just send same command to sensors, you can turn on both at same time.
+  Tribot.writePin(Pins::SWI_SENSOR_FORE, HIGH);
+ 16c:	41 e0       	ldi	r20, 0x01	; 1
+ 16e:	6d e0       	ldi	r22, 0x0D	; 13
+ 170:	8e e8       	ldi	r24, 0x8E	; 142
+ 172:	90 e0       	ldi	r25, 0x00	; 0
+ 174:	95 d3       	rcall	.+1834   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  Tribot.writePin(Pins::SWI_SENSOR_BACK, HIGH);
+ 176:	41 e0       	ldi	r20, 0x01	; 1
+ 178:	69 e0       	ldi	r22, 0x09	; 9
+ 17a:	8e e8       	ldi	r24, 0x8E	; 142
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	90 d3       	rcall	.+1824   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+
+  VCNL4010.begin();
+ 180:	84 e9       	ldi	r24, 0x94	; 148
+ 182:	90 e0       	ldi	r25, 0x00	; 0
+ 184:	af d4       	rcall	.+2398   	; 0xae4 <_ZN12TinyVCNL40105beginEv>
+
+  Tribot.writePin(Pins::SWI_SENSOR_FORE, LOW);
+ 186:	40 e0       	ldi	r20, 0x00	; 0
+ 188:	6d e0       	ldi	r22, 0x0D	; 13
+ 18a:	8e e8       	ldi	r24, 0x8E	; 142
+ 18c:	90 e0       	ldi	r25, 0x00	; 0
+ 18e:	88 d3       	rcall	.+1808   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  Tribot.writePin(Pins::SWI_SENSOR_BACK, LOW);
+ 190:	40 e0       	ldi	r20, 0x00	; 0
+ 192:	69 e0       	ldi	r22, 0x09	; 9
+ 194:	8e e8       	ldi	r24, 0x8E	; 142
+ 196:	90 e0       	ldi	r25, 0x00	; 0
+ 198:	83 d3       	rcall	.+1798   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  //SFlags &= ~_BV(DRCF);		//used in following and scanning so i don't use this
+  //SFlags |= _BV(DRCF);		//same as upper
+  //
+  //Set interrupt for INI0 and INT1
+  //  
+  MCUCR = _BV(ISC01) | _BV(ISC11); // INT0 and INT1 fall down
+ 19a:	8a e0       	ldi	r24, 0x0A	; 10
+ 19c:	85 bf       	out	0x35, r24	; 53
+  clearGIFR();										//Just in case, when you INT0 and INT1 ON, you have to call this function
+ 19e:	f8 d5       	rcall	.+3056   	; 0xd90 <_Z9clearGIFRv>
+  GIMSK |= _BV(INT0) | _BV(INT1);	//enable interrupt by INT0 and INT 1 which are used in infrared communication  
+ 1a0:	8b b7       	in	r24, 0x3b	; 59
+ 1a2:	80 6c       	ori	r24, 0xC0	; 192
+ 1a4:	8b bf       	out	0x3b, r24	; 59
+  //
+  //turn LED_G on
+  //
+  Tribot.writePin(Pins::LED_G, HIGH);
+ 1a6:	41 e0       	ldi	r20, 0x01	; 1
+ 1a8:	61 e0       	ldi	r22, 0x01	; 1
+ 1aa:	8e e8       	ldi	r24, 0x8E	; 142
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	78 c3       	rjmp	.+1776   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+
+000001b0 <_Z21manualLocomotionEventv>:
+		_delay_ms(50);
+	}
+	SFlags &= ~_BV(IAF);	//clear flag
+	loadGIMSK();					//infrared communication on
+}
+void manualLocomotionEvent(void) {
+ 1b0:	cf 92       	push	r12
+ 1b2:	df 92       	push	r13
+ 1b4:	ef 92       	push	r14
+ 1b6:	ff 92       	push	r15
+ 1b8:	0f 93       	push	r16
+ 1ba:	1f 93       	push	r17
+	* This is to realize locomotion with parameters which you can change without uploading program
+	* you will use this when you want to find good parameters or crawling in multiple terrains
+	*	while do this, Tribot can't communicate until the end of locomotion because parameters are saved in Infrared_Buf
+	* written pins are defined in Robogami.cpp
+	*/
+  if( millis() - Locomotion_Millis >= (uint16_t)100*Infrared_Buf[Locomotion_Idx+1] ) {//If time passed
+ 1bc:	c9 d5       	rcall	.+2962   	; 0xd50 <_Z6millisv>
+ 1be:	00 91 89 00 	lds	r16, 0x0089	; 0x800089 <Locomotion_Millis>
+ 1c2:	10 91 8a 00 	lds	r17, 0x008A	; 0x80008a <Locomotion_Millis+0x1>
+ 1c6:	20 91 8b 00 	lds	r18, 0x008B	; 0x80008b <Locomotion_Millis+0x2>
+ 1ca:	30 91 8c 00 	lds	r19, 0x008C	; 0x80008c <Locomotion_Millis+0x3>
+ 1ce:	6b 01       	movw	r12, r22
+ 1d0:	7c 01       	movw	r14, r24
+ 1d2:	c0 1a       	sub	r12, r16
+ 1d4:	d1 0a       	sbc	r13, r17
+ 1d6:	e2 0a       	sbc	r14, r18
+ 1d8:	f3 0a       	sbc	r15, r19
+ 1da:	e0 91 88 00 	lds	r30, 0x0088	; 0x800088 <Locomotion_Idx>
+ 1de:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e0:	e6 59       	subi	r30, 0x96	; 150
+ 1e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1e4:	81 81       	ldd	r24, Z+1	; 0x01
+ 1e6:	90 e0       	ldi	r25, 0x00	; 0
+ 1e8:	64 e6       	ldi	r22, 0x64	; 100
+ 1ea:	70 e0       	ldi	r23, 0x00	; 0
+ 1ec:	ba d6       	rcall	.+3444   	; 0xf62 <__mulhi3>
+ 1ee:	a0 e0       	ldi	r26, 0x00	; 0
+ 1f0:	b0 e0       	ldi	r27, 0x00	; 0
+ 1f2:	c8 16       	cp	r12, r24
+ 1f4:	d9 06       	cpc	r13, r25
+ 1f6:	ea 06       	cpc	r14, r26
+ 1f8:	fb 06       	cpc	r15, r27
+ 1fa:	a0 f1       	brcs	.+104    	; 0x264 <_Z21manualLocomotionEventv+0xb4>
+		do {
+			Locomotion++;							//increment
+ 1fc:	8f ef       	ldi	r24, 0xFF	; 255
+ 1fe:	68 1a       	sub	r6, r24
+ 200:	78 0a       	sbc	r7, r24
+			Locomotion_Idx += 2;			//increment
+ 202:	a0 91 88 00 	lds	r26, 0x0088	; 0x800088 <Locomotion_Idx>
+ 206:	ae 5f       	subi	r26, 0xFE	; 254
+ 208:	a0 93 88 00 	sts	0x0088, r26	; 0x800088 <Locomotion_Idx>
+			if ( pgm_read_byte(Locomotion) == Pins::END ) {//end of locomotion
+ 20c:	f3 01       	movw	r30, r6
+ 20e:	84 91       	lpm	r24, Z
+ 210:	8f 3f       	cpi	r24, 0xFF	; 255
+ 212:	79 f4       	brne	.+30     	; 0x232 <_Z21manualLocomotionEventv+0x82>
+				Tribot.stopSMA();			//Just in case, turn off every SMAs
+ 214:	8e e8       	ldi	r24, 0x8E	; 142
+ 216:	90 e0       	ldi	r25, 0x00	; 0
+ 218:	a2 d3       	rcall	.+1860   	; 0x95e <_ZN8Robogami7stopSMAEv>
+				Locomotion = NULL;		//make Pointer empty
+ 21a:	61 2c       	mov	r6, r1
+ 21c:	71 2c       	mov	r7, r1
+				SFlags &= ~_BV(MLF);	//clear Flag
+ 21e:	85 2d       	mov	r24, r5
+ 220:	8b 7f       	andi	r24, 0xFB	; 251
+ 222:	58 2e       	mov	r5, r24
+				Tribot.writePin(pgm_read_byte(Locomotion), Infrared_Buf[Locomotion_Idx] );		//write pin
+			}
+			Locomotion_Millis = millis();		//update millis
+		}while( Infrared_Buf[Locomotion_Idx+1] == 0 );//if during = 0, write next pin immediately
+  }
+}
+ 224:	1f 91       	pop	r17
+ 226:	0f 91       	pop	r16
+ 228:	ff 90       	pop	r15
+ 22a:	ef 90       	pop	r14
+ 22c:	df 90       	pop	r13
+ 22e:	cf 90       	pop	r12
+			Locomotion_Idx += 2;			//increment
+			if ( pgm_read_byte(Locomotion) == Pins::END ) {//end of locomotion
+				Tribot.stopSMA();			//Just in case, turn off every SMAs
+				Locomotion = NULL;		//make Pointer empty
+				SFlags &= ~_BV(MLF);	//clear Flag
+				loadGIMSK();					//Infrared communication on
+ 230:	3d c6       	rjmp	.+3194   	; 0xeac <_Z9loadGIMSKv>
+				break;
+			}
+			else {
+				Tribot.writePin(pgm_read_byte(Locomotion), Infrared_Buf[Locomotion_Idx] );		//write pin
+ 232:	64 91       	lpm	r22, Z
+ 234:	b0 e0       	ldi	r27, 0x00	; 0
+ 236:	a6 59       	subi	r26, 0x96	; 150
+ 238:	bf 4f       	sbci	r27, 0xFF	; 255
+ 23a:	4c 91       	ld	r20, X
+ 23c:	8e e8       	ldi	r24, 0x8E	; 142
+ 23e:	90 e0       	ldi	r25, 0x00	; 0
+ 240:	2f d3       	rcall	.+1630   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+			}
+			Locomotion_Millis = millis();		//update millis
+ 242:	86 d5       	rcall	.+2828   	; 0xd50 <_Z6millisv>
+ 244:	60 93 89 00 	sts	0x0089, r22	; 0x800089 <Locomotion_Millis>
+ 248:	70 93 8a 00 	sts	0x008A, r23	; 0x80008a <Locomotion_Millis+0x1>
+ 24c:	80 93 8b 00 	sts	0x008B, r24	; 0x80008b <Locomotion_Millis+0x2>
+ 250:	90 93 8c 00 	sts	0x008C, r25	; 0x80008c <Locomotion_Millis+0x3>
+		}while( Infrared_Buf[Locomotion_Idx+1] == 0 );//if during = 0, write next pin immediately
+ 254:	e0 91 88 00 	lds	r30, 0x0088	; 0x800088 <Locomotion_Idx>
+ 258:	f0 e0       	ldi	r31, 0x00	; 0
+ 25a:	e6 59       	subi	r30, 0x96	; 150
+ 25c:	ff 4f       	sbci	r31, 0xFF	; 255
+	* you will use this when you want to find good parameters or crawling in multiple terrains
+	*	while do this, Tribot can't communicate until the end of locomotion because parameters are saved in Infrared_Buf
+	* written pins are defined in Robogami.cpp
+	*/
+  if( millis() - Locomotion_Millis >= (uint16_t)100*Infrared_Buf[Locomotion_Idx+1] ) {//If time passed
+		do {
+ 25e:	81 81       	ldd	r24, Z+1	; 0x01
+ 260:	88 23       	and	r24, r24
+ 262:	61 f2       	breq	.-104    	; 0x1fc <_Z21manualLocomotionEventv+0x4c>
+				Tribot.writePin(pgm_read_byte(Locomotion), Infrared_Buf[Locomotion_Idx] );		//write pin
+			}
+			Locomotion_Millis = millis();		//update millis
+		}while( Infrared_Buf[Locomotion_Idx+1] == 0 );//if during = 0, write next pin immediately
+  }
+}
+ 264:	1f 91       	pop	r17
+ 266:	0f 91       	pop	r16
+ 268:	ff 90       	pop	r15
+ 26a:	ef 90       	pop	r14
+ 26c:	df 90       	pop	r13
+ 26e:	cf 90       	pop	r12
+ 270:	08 95       	ret
+
+00000272 <_Z21measureProximityValuehh>:
+		}
+  }
+	//*/
+}
+
+unsigned long measureProximityValue(uint8_t sensor, uint8_t n){
+ 272:	af 92       	push	r10
+ 274:	bf 92       	push	r11
+ 276:	cf 92       	push	r12
+ 278:	df 92       	push	r13
+ 27a:	ef 92       	push	r14
+ 27c:	ff 92       	push	r15
+ 27e:	0f 93       	push	r16
+ 280:	1f 93       	push	r17
+ 282:	cf 93       	push	r28
+ 284:	df 93       	push	r29
+ 286:	00 d0       	rcall	.+0      	; 0x288 <_Z21measureProximityValuehh+0x16>
+ 288:	00 d0       	rcall	.+0      	; 0x28a <_Z21measureProximityValuehh+0x18>
+ 28a:	cd b7       	in	r28, 0x3d	; 61
+ 28c:	de b7       	in	r29, 0x3e	; 62
+ 28e:	b8 2e       	mov	r11, r24
+ 290:	a6 2e       	mov	r10, r22
+	* Proximity sensor use I2C communication. If you want to know how you have to command sensors, please check VCNL4010's datasheet
+	* proximity value is 16-bit and it's read each 8 bit
+	* this function average proximity value n times.
+	*/
+	unsigned long proximity = 0;				//should be initialize with 0 
+  saveGIMSK();											//Infrared communication should be turned off because proximity sensors also use infrared
+ 292:	f7 d5       	rcall	.+3054   	; 0xe82 <_Z9saveGIMSKv>
+  Tribot.writePin(sensor, HIGH);		//one sensor on
+ 294:	41 e0       	ldi	r20, 0x01	; 1
+ 296:	6b 2d       	mov	r22, r11
+ 298:	8e e8       	ldi	r24, 0x8E	; 142
+ 29a:	90 e0       	ldi	r25, 0x00	; 0
+ 29c:	01 d3       	rcall	.+1538   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  //
+	//loop to avarage proximity value
+	for(uint8_t i=0; i<n; i++) {			
+ 29e:	00 e0       	ldi	r16, 0x00	; 0
+	* This is function to command sensor to measure proximity value and receive it.
+	* Proximity sensor use I2C communication. If you want to know how you have to command sensors, please check VCNL4010's datasheet
+	* proximity value is 16-bit and it's read each 8 bit
+	* this function average proximity value n times.
+	*/
+	unsigned long proximity = 0;				//should be initialize with 0 
+ 2a0:	c1 2c       	mov	r12, r1
+ 2a2:	d1 2c       	mov	r13, r1
+ 2a4:	76 01       	movw	r14, r12
+  saveGIMSK();											//Infrared communication should be turned off because proximity sensors also use infrared
+  Tribot.writePin(sensor, HIGH);		//one sensor on
+  //
+	//loop to avarage proximity value
+	for(uint8_t i=0; i<n; i++) {			
+ 2a6:	0a 15       	cp	r16, r10
+ 2a8:	41 f1       	breq	.+80     	; 0x2fa <_Z21measureProximityValuehh+0x88>
+    VCNL4010.write(ConstVCNL4010::COMMAND_REG);
+ 2aa:	60 e8       	ldi	r22, 0x80	; 128
+ 2ac:	84 e9       	ldi	r24, 0x94	; 148
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	06 d4       	rcall	.+2060   	; 0xabe <_ZN12TinyVCNL40105writeEh>
+    VCNL4010.write(ConstVCNL4010::MEASUREPROXIMITY);
+ 2b2:	68 e0       	ldi	r22, 0x08	; 8
+ 2b4:	84 e9       	ldi	r24, 0x94	; 148
+ 2b6:	90 e0       	ldi	r25, 0x00	; 0
+ 2b8:	02 d4       	rcall	.+2052   	; 0xabe <_ZN12TinyVCNL40105writeEh>
+    VCNL4010.transmission();
+ 2ba:	84 e9       	ldi	r24, 0x94	; 148
+ 2bc:	90 e0       	ldi	r25, 0x00	; 0
+ 2be:	09 d4       	rcall	.+2066   	; 0xad2 <_ZN12TinyVCNL401012transmissionEv>
+    VCNL4010.write(ConstVCNL4010::PROXIMITYDATA_REG);
+ 2c0:	67 e8       	ldi	r22, 0x87	; 135
+ 2c2:	84 e9       	ldi	r24, 0x94	; 148
+ 2c4:	90 e0       	ldi	r25, 0x00	; 0
+ 2c6:	fb d3       	rcall	.+2038   	; 0xabe <_ZN12TinyVCNL40105writeEh>
+    VCNL4010.transmission();
+ 2c8:	84 e9       	ldi	r24, 0x94	; 148
+ 2ca:	90 e0       	ldi	r25, 0x00	; 0
+ 2cc:	02 d4       	rcall	.+2052   	; 0xad2 <_ZN12TinyVCNL401012transmissionEv>
+    VCNL4010.requestFrom(2);
+ 2ce:	62 e0       	ldi	r22, 0x02	; 2
+ 2d0:	84 e9       	ldi	r24, 0x94	; 148
+ 2d2:	90 e0       	ldi	r25, 0x00	; 0
+ 2d4:	13 d4       	rcall	.+2086   	; 0xafc <_ZN12TinyVCNL401011requestFromEh>
+    uint16_t tmp = 0;
+    tmp |= (uint8_t)VCNL4010.read() << 8;			//Read higher byte
+ 2d6:	84 e9       	ldi	r24, 0x94	; 148
+ 2d8:	90 e0       	ldi	r25, 0x00	; 0
+ 2da:	26 d4       	rcall	.+2124   	; 0xb28 <_ZN12TinyVCNL40104readEv>
+ 2dc:	18 2f       	mov	r17, r24
+    tmp |= (uint8_t)VCNL4010.read();					//read lower byte
+ 2de:	84 e9       	ldi	r24, 0x94	; 148
+ 2e0:	90 e0       	ldi	r25, 0x00	; 0
+ 2e2:	22 d4       	rcall	.+2116   	; 0xb28 <_ZN12TinyVCNL40104readEv>
+    VCNL4010.transmission();
+    VCNL4010.write(ConstVCNL4010::PROXIMITYDATA_REG);
+    VCNL4010.transmission();
+    VCNL4010.requestFrom(2);
+    uint16_t tmp = 0;
+    tmp |= (uint8_t)VCNL4010.read() << 8;			//Read higher byte
+ 2e4:	41 2f       	mov	r20, r17
+ 2e6:	50 e0       	ldi	r21, 0x00	; 0
+ 2e8:	54 2f       	mov	r21, r20
+ 2ea:	44 27       	eor	r20, r20
+    tmp |= (uint8_t)VCNL4010.read();					//read lower byte
+ 2ec:	48 2b       	or	r20, r24
+    proximity += tmp;													//summarize
+ 2ee:	c4 0e       	add	r12, r20
+ 2f0:	d5 1e       	adc	r13, r21
+ 2f2:	e1 1c       	adc	r14, r1
+ 2f4:	f1 1c       	adc	r15, r1
+	unsigned long proximity = 0;				//should be initialize with 0 
+  saveGIMSK();											//Infrared communication should be turned off because proximity sensors also use infrared
+  Tribot.writePin(sensor, HIGH);		//one sensor on
+  //
+	//loop to avarage proximity value
+	for(uint8_t i=0; i<n; i++) {			
+ 2f6:	0f 5f       	subi	r16, 0xFF	; 255
+ 2f8:	d6 cf       	rjmp	.-84     	; 0x2a6 <_Z21measureProximityValuehh+0x34>
+    tmp |= (uint8_t)VCNL4010.read();					//read lower byte
+    proximity += tmp;													//summarize
+  }
+	//end of loop
+	//
+  Tribot.writePin(sensor, LOW);						//sensor off
+ 2fa:	40 e0       	ldi	r20, 0x00	; 0
+ 2fc:	6b 2d       	mov	r22, r11
+ 2fe:	8e e8       	ldi	r24, 0x8E	; 142
+ 300:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	ce d2       	rcall	.+1436   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  proximity /= (unsigned long)n;						//averaged
+ 304:	20 2f       	mov	r18, r16
+ 306:	30 e0       	ldi	r19, 0x00	; 0
+ 308:	40 e0       	ldi	r20, 0x00	; 0
+ 30a:	50 e0       	ldi	r21, 0x00	; 0
+ 30c:	c7 01       	movw	r24, r14
+ 30e:	b6 01       	movw	r22, r12
+ 310:	39 d6       	rcall	.+3186   	; 0xf84 <__udivmodsi4>
+  loadGIMSK();														//infrared communication on
+ 312:	29 83       	std	Y+1, r18	; 0x01
+ 314:	3a 83       	std	Y+2, r19	; 0x02
+ 316:	4b 83       	std	Y+3, r20	; 0x03
+ 318:	5c 83       	std	Y+4, r21	; 0x04
+ 31a:	c8 d5       	rcall	.+2960   	; 0xeac <_Z9loadGIMSKv>
+  return proximity;												//return averaged proximity value			
+}
+ 31c:	29 81       	ldd	r18, Y+1	; 0x01
+ 31e:	3a 81       	ldd	r19, Y+2	; 0x02
+ 320:	4b 81       	ldd	r20, Y+3	; 0x03
+ 322:	5c 81       	ldd	r21, Y+4	; 0x04
+ 324:	ca 01       	movw	r24, r20
+ 326:	b9 01       	movw	r22, r18
+ 328:	0f 90       	pop	r0
+ 32a:	0f 90       	pop	r0
+ 32c:	0f 90       	pop	r0
+ 32e:	0f 90       	pop	r0
+ 330:	df 91       	pop	r29
+ 332:	cf 91       	pop	r28
+ 334:	1f 91       	pop	r17
+ 336:	0f 91       	pop	r16
+ 338:	ff 90       	pop	r15
+ 33a:	ef 90       	pop	r14
+ 33c:	df 90       	pop	r13
+ 33e:	cf 90       	pop	r12
+ 340:	bf 90       	pop	r11
+ 342:	af 90       	pop	r10
+ 344:	08 95       	ret
+
+00000346 <_Z17calculateDistancemh>:
+uint8_t calculateDistance(unsigned long proximity, uint8_t sensor) {
+ 346:	cf 92       	push	r12
+ 348:	df 92       	push	r13
+ 34a:	ef 92       	push	r14
+ 34c:	ff 92       	push	r15
+ 34e:	0f 93       	push	r16
+ 350:	1f 93       	push	r17
+ 352:	8b 01       	movw	r16, r22
+ 354:	9c 01       	movw	r18, r24
+	/* This function return ditance by using proximity value and proxi/distance table which is declare at the beggining of this file.
+	*/
+	uint8_t distanceMm = 150;								//It should be initilized with maximum distance value which sensor can detect
+	//first subtract offset from proximity value
+	if(Pins::SWI_SENSOR_FORE == sensor) {//fore sensor
+ 356:	4d 30       	cpi	r20, 0x0D	; 13
+ 358:	29 f4       	brne	.+10     	; 0x364 <_Z17calculateDistancemh+0x1e>
+    if ( proximity > Offset_SENSOR_FORE ) {
+ 35a:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <Offset_SENSOR_FORE>
+ 35e:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <Offset_SENSOR_FORE+0x1>
+ 362:	04 c0       	rjmp	.+8      	; 0x36c <_Z17calculateDistancemh+0x26>
+		else {
+			proximity = 0;
+		}
+  } 
+  else {//back sensor
+    if( proximity > Offset_SENSOR_BACK ) {
+ 364:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <Offset_SENSOR_BACK>
+ 368:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <Offset_SENSOR_BACK+0x1>
+ 36c:	a0 e0       	ldi	r26, 0x00	; 0
+ 36e:	b0 e0       	ldi	r27, 0x00	; 0
+ 370:	80 17       	cp	r24, r16
+ 372:	91 07       	cpc	r25, r17
+ 374:	a2 07       	cpc	r26, r18
+ 376:	b3 07       	cpc	r27, r19
+ 378:	28 f4       	brcc	.+10     	; 0x384 <_Z17calculateDistancemh+0x3e>
+			proximity -= Offset_SENSOR_BACK;
+ 37a:	08 1b       	sub	r16, r24
+ 37c:	19 0b       	sbc	r17, r25
+ 37e:	2a 0b       	sbc	r18, r26
+ 380:	3b 0b       	sbc	r19, r27
+ 382:	03 c0       	rjmp	.+6      	; 0x38a <_Z17calculateDistancemh+0x44>
+	if(Pins::SWI_SENSOR_FORE == sensor) {//fore sensor
+    if ( proximity > Offset_SENSOR_FORE ) {
+			proximity -= Offset_SENSOR_FORE;
+		}
+		else {
+			proximity = 0;
+ 384:	00 e0       	ldi	r16, 0x00	; 0
+ 386:	10 e0       	ldi	r17, 0x00	; 0
+ 388:	98 01       	movw	r18, r16
+		}
+    else {
+			proximity = 0;
+		}
+  }
+	uint16_t *table = (uint16_t*)PROXI_DISTANCE_TABLE_LYING_YELLOWBLOCK;//table set
+ 38a:	4a e2       	ldi	r20, 0x2A	; 42
+ 38c:	50 e0       	ldi	r21, 0x00	; 0
+  return proximity;												//return averaged proximity value			
+}
+uint8_t calculateDistance(unsigned long proximity, uint8_t sensor) {
+	/* This function return ditance by using proximity value and proxi/distance table which is declare at the beggining of this file.
+	*/
+	uint8_t distanceMm = 150;								//It should be initilized with maximum distance value which sensor can detect
+ 38e:	86 e9       	ldi	r24, 0x96	; 150
+			proximity = 0;
+		}
+  }
+	uint16_t *table = (uint16_t*)PROXI_DISTANCE_TABLE_LYING_YELLOWBLOCK;//table set
+	while (1) {
+		if(proximity > pgm_read_word(table) ) {//if value bigger than table value
+ 390:	fa 01       	movw	r30, r20
+ 392:	c5 90       	lpm	r12, Z+
+ 394:	d4 90       	lpm	r13, Z
+ 396:	e1 2c       	mov	r14, r1
+ 398:	f1 2c       	mov	r15, r1
+ 39a:	c0 16       	cp	r12, r16
+ 39c:	d1 06       	cpc	r13, r17
+ 39e:	e2 06       	cpc	r14, r18
+ 3a0:	f3 06       	cpc	r15, r19
+ 3a2:	20 f4       	brcc	.+8      	; 0x3ac <_Z17calculateDistancemh+0x66>
+ 3a4:	fa 01       	movw	r30, r20
+ 3a6:	32 96       	adiw	r30, 0x02	; 2
+			distanceMm = (uint8_t)pgm_read_word(table+1);
+ 3a8:	85 91       	lpm	r24, Z+
+ 3aa:	94 91       	lpm	r25, Z
+		}
+		table += 2;
+ 3ac:	4c 5f       	subi	r20, 0xFC	; 252
+ 3ae:	5f 4f       	sbci	r21, 0xFF	; 255
+		if(pgm_read_word(table) == 0xFFFF) {//if reach end of the table
+ 3b0:	fa 01       	movw	r30, r20
+ 3b2:	65 91       	lpm	r22, Z+
+ 3b4:	74 91       	lpm	r23, Z
+ 3b6:	6f 3f       	cpi	r22, 0xFF	; 255
+ 3b8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3ba:	51 f7       	brne	.-44     	; 0x390 <_Z17calculateDistancemh+0x4a>
+			break;
+		}
+	}
+	return distanceMm;
+}
+ 3bc:	1f 91       	pop	r17
+ 3be:	0f 91       	pop	r16
+ 3c0:	ff 90       	pop	r15
+ 3c2:	ef 90       	pop	r14
+ 3c4:	df 90       	pop	r13
+ 3c6:	cf 90       	pop	r12
+ 3c8:	08 95       	ret
+
+000003ca <_Z10setTxArrayhhhhh>:
+void setTxArray(uint8_t to, uint8_t relay_Flag, uint8_t command, uint8_t message1, uint8_t message2) {
+ 3ca:	ef 92       	push	r14
+ 3cc:	ff 92       	push	r15
+ 3ce:	0f 93       	push	r16
+ 3d0:	cf 93       	push	r28
+ 3d2:	df 93       	push	r29
+ 3d4:	00 d0       	rcall	.+0      	; 0x3d6 <_Z10setTxArrayhhhhh+0xc>
+ 3d6:	cd b7       	in	r28, 0x3d	; 61
+ 3d8:	de b7       	in	r29, 0x3e	; 62
+  /*
+	* This function is to set infrared message to infrared buf
+	*/ 
+	uint8_t *tmp = Infrared_Buf;
+  
+  *tmp++ = Infrareds::BOM;
+ 3da:	9a e6       	ldi	r25, 0x6A	; 106
+ 3dc:	e9 2e       	mov	r14, r25
+ 3de:	90 e0       	ldi	r25, 0x00	; 0
+ 3e0:	f9 2e       	mov	r15, r25
+ 3e2:	90 ec       	ldi	r25, 0xC0	; 192
+ 3e4:	f7 01       	movw	r30, r14
+ 3e6:	90 83       	st	Z, r25
+  *tmp++ = to;
+ 3e8:	81 83       	std	Z+1, r24	; 0x01
+	*tmp++ = relay_Flag;
+ 3ea:	62 83       	std	Z+2, r22	; 0x02
+  *tmp++ = Tribot.getId();
+ 3ec:	8e e8       	ldi	r24, 0x8E	; 142
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	2a 83       	std	Y+2, r18	; 0x02
+ 3f2:	49 83       	std	Y+1, r20	; 0x01
+ 3f4:	4c d2       	rcall	.+1176   	; 0x88e <_ZN8Robogami5getIdEv>
+ 3f6:	f7 01       	movw	r30, r14
+ 3f8:	83 83       	std	Z+3, r24	; 0x03
+  *tmp++ = Tribot.getRole();
+ 3fa:	8e e8       	ldi	r24, 0x8E	; 142
+ 3fc:	90 e0       	ldi	r25, 0x00	; 0
+ 3fe:	4d d2       	rcall	.+1178   	; 0x89a <_ZN8Robogami7getRoleEv>
+ 400:	f7 01       	movw	r30, r14
+ 402:	84 83       	std	Z+4, r24	; 0x04
+  *tmp++ = command;
+ 404:	49 81       	ldd	r20, Y+1	; 0x01
+ 406:	45 83       	std	Z+5, r20	; 0x05
+  *tmp++ = message1;
+ 408:	2a 81       	ldd	r18, Y+2	; 0x02
+ 40a:	26 83       	std	Z+6, r18	; 0x06
+  *tmp++ = message2;
+ 40c:	07 83       	std	Z+7, r16	; 0x07
+  *tmp++ = Infrareds::EOM;
+ 40e:	81 ec       	ldi	r24, 0xC1	; 193
+ 410:	80 87       	std	Z+8, r24	; 0x08
+}
+ 412:	0f 90       	pop	r0
+ 414:	0f 90       	pop	r0
+ 416:	df 91       	pop	r29
+ 418:	cf 91       	pop	r28
+ 41a:	0f 91       	pop	r16
+ 41c:	ff 90       	pop	r15
+ 41e:	ef 90       	pop	r14
+ 420:	08 95       	ret
+
+00000422 <_Z10setTxArrayhhhh>:
+void setTxArray(uint8_t to, uint8_t relay_Flag, uint8_t command, uint8_t message1) {
+ 422:	0f 93       	push	r16
+  setTxArray(to, relay_Flag, command, message1, 0);
+ 424:	00 e0       	ldi	r16, 0x00	; 0
+ 426:	d1 df       	rcall	.-94     	; 0x3ca <_Z10setTxArrayhhhhh>
+}
+ 428:	0f 91       	pop	r16
+ 42a:	08 95       	ret
+
+0000042c <_Z10setTxArrayhhh>:
+void setTxArray(uint8_t to, uint8_t relay_Flag, uint8_t command) {
+ 42c:	0f 93       	push	r16
+  setTxArray(to, relay_Flag, command, 0, 0);
+ 42e:	00 e0       	ldi	r16, 0x00	; 0
+ 430:	20 e0       	ldi	r18, 0x00	; 0
+ 432:	cb df       	rcall	.-106    	; 0x3ca <_Z10setTxArrayhhhhh>
+}
+ 434:	0f 91       	pop	r16
+ 436:	08 95       	ret
+
+00000438 <_Z19autoLocomotionEventv>:
+			}
+			Locomotion_Millis = millis();		//update millis
+		}while( Infrared_Buf[Locomotion_Idx+1] == 0 );//if during = 0, write next pin immediately
+  }
+}
+void autoLocomotionEvent(void) {
+ 438:	cf 92       	push	r12
+ 43a:	df 92       	push	r13
+ 43c:	ef 92       	push	r14
+ 43e:	ff 92       	push	r15
+ 440:	0f 93       	push	r16
+ 442:	1f 93       	push	r17
+	* Tribot can communicate while doing this, but I make it not communicate because in some cases, noise generated by PWM and SMA cause problems in communication. 
+	* If you want to change pre-set paramters and the order of pins, please check Robogami.cpp
+	* And when end this locomotion, Tribot send message which means Done locomotion.
+	* it is used in Pushing experiments.
+	*/
+  if( millis() - Locomotion_Millis >= (uint16_t)100*pgm_read_byte(Locomotion+2) ) {
+ 444:	85 d4       	rcall	.+2314   	; 0xd50 <_Z6millisv>
+ 446:	f3 01       	movw	r30, r6
+ 448:	32 96       	adiw	r30, 0x02	; 2
+ 44a:	e4 91       	lpm	r30, Z
+ 44c:	00 91 89 00 	lds	r16, 0x0089	; 0x800089 <Locomotion_Millis>
+ 450:	10 91 8a 00 	lds	r17, 0x008A	; 0x80008a <Locomotion_Millis+0x1>
+ 454:	20 91 8b 00 	lds	r18, 0x008B	; 0x80008b <Locomotion_Millis+0x2>
+ 458:	30 91 8c 00 	lds	r19, 0x008C	; 0x80008c <Locomotion_Millis+0x3>
+ 45c:	6b 01       	movw	r12, r22
+ 45e:	7c 01       	movw	r14, r24
+ 460:	c0 1a       	sub	r12, r16
+ 462:	d1 0a       	sbc	r13, r17
+ 464:	e2 0a       	sbc	r14, r18
+ 466:	f3 0a       	sbc	r15, r19
+ 468:	8e 2f       	mov	r24, r30
+ 46a:	90 e0       	ldi	r25, 0x00	; 0
+ 46c:	64 e6       	ldi	r22, 0x64	; 100
+ 46e:	70 e0       	ldi	r23, 0x00	; 0
+ 470:	78 d5       	rcall	.+2800   	; 0xf62 <__mulhi3>
+ 472:	a0 e0       	ldi	r26, 0x00	; 0
+ 474:	b0 e0       	ldi	r27, 0x00	; 0
+ 476:	c8 16       	cp	r12, r24
+ 478:	d9 06       	cpc	r13, r25
+ 47a:	ea 06       	cpc	r14, r26
+ 47c:	fb 06       	cpc	r15, r27
+ 47e:	08 f4       	brcc	.+2      	; 0x482 <_Z19autoLocomotionEventv+0x4a>
+ 480:	3a c0       	rjmp	.+116    	; 0x4f6 <_Z19autoLocomotionEventv+0xbe>
+		do {
+			if ( pgm_read_byte(Locomotion) == Pins::END ) {	//end process
+ 482:	a3 01       	movw	r20, r6
+ 484:	f3 01       	movw	r30, r6
+ 486:	84 91       	lpm	r24, Z
+ 488:	8f 3f       	cpi	r24, 0xFF	; 255
+ 48a:	89 f4       	brne	.+34     	; 0x4ae <_Z19autoLocomotionEventv+0x76>
+				Locomotion = NULL;														//make Pointer empty
+ 48c:	61 2c       	mov	r6, r1
+ 48e:	71 2c       	mov	r7, r1
+				setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::DONE_TASK);//set message in Infrared_Buf
+ 490:	45 e3       	ldi	r20, 0x35	; 53
+ 492:	60 91 6c 00 	lds	r22, 0x006C	; 0x80006c <__data_end+0x2>
+ 496:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <__data_end+0x3>
+ 49a:	c8 df       	rcall	.-112    	; 0x42c <_Z10setTxArrayhhh>
+				sendInfrared(Infrared_Buf);											//Send infrared message
+ 49c:	8a e6       	ldi	r24, 0x6A	; 106
+ 49e:	90 e0       	ldi	r25, 0x00	; 0
+				Tribot.writePin(pgm_read_byte(Locomotion), pgm_read_byte(Locomotion+1) );//write pin
+			}
+			Locomotion_Millis = millis();//update millis
+		} while( pgm_read_byte(Locomotion+2) == 0 );//if during is 0, go to next loop immediately
+  }
+}
+ 4a0:	1f 91       	pop	r17
+ 4a2:	0f 91       	pop	r16
+ 4a4:	ff 90       	pop	r15
+ 4a6:	ef 90       	pop	r14
+ 4a8:	df 90       	pop	r13
+ 4aa:	cf 90       	pop	r12
+  if( millis() - Locomotion_Millis >= (uint16_t)100*pgm_read_byte(Locomotion+2) ) {
+		do {
+			if ( pgm_read_byte(Locomotion) == Pins::END ) {	//end process
+				Locomotion = NULL;														//make Pointer empty
+				setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::DONE_TASK);//set message in Infrared_Buf
+				sendInfrared(Infrared_Buf);											//Send infrared message
+ 4ac:	13 c5       	rjmp	.+2598   	; 0xed4 <_Z12sendInfraredPh>
+				break;
+			}
+			Locomotion += 3;	//increment of pointer
+ 4ae:	b3 01       	movw	r22, r6
+ 4b0:	6d 5f       	subi	r22, 0xFD	; 253
+ 4b2:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4b4:	3b 01       	movw	r6, r22
+			if ( pgm_read_byte(Locomotion) == Pins::END ) {
+ 4b6:	fb 01       	movw	r30, r22
+ 4b8:	84 91       	lpm	r24, Z
+ 4ba:	8f 3f       	cpi	r24, 0xFF	; 255
+ 4bc:	29 f4       	brne	.+10     	; 0x4c8 <_Z19autoLocomotionEventv+0x90>
+				Tribot.stopSMA();							//Just in case, turn off every SMAs
+ 4be:	8e e8       	ldi	r24, 0x8E	; 142
+ 4c0:	90 e0       	ldi	r25, 0x00	; 0
+ 4c2:	4d d2       	rcall	.+1178   	; 0x95e <_ZN8Robogami7stopSMAEv>
+				loadGIMSK();									//Communication on
+ 4c4:	f3 d4       	rcall	.+2534   	; 0xeac <_Z9loadGIMSKv>
+ 4c6:	08 c0       	rjmp	.+16     	; 0x4d8 <_Z19autoLocomotionEventv+0xa0>
+			}
+			else {
+				Tribot.writePin(pgm_read_byte(Locomotion), pgm_read_byte(Locomotion+1) );//write pin
+ 4c8:	fa 01       	movw	r30, r20
+ 4ca:	34 96       	adiw	r30, 0x04	; 4
+ 4cc:	44 91       	lpm	r20, Z
+ 4ce:	fb 01       	movw	r30, r22
+ 4d0:	64 91       	lpm	r22, Z
+ 4d2:	8e e8       	ldi	r24, 0x8E	; 142
+ 4d4:	90 e0       	ldi	r25, 0x00	; 0
+ 4d6:	e4 d1       	rcall	.+968    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+			}
+			Locomotion_Millis = millis();//update millis
+ 4d8:	3b d4       	rcall	.+2166   	; 0xd50 <_Z6millisv>
+ 4da:	60 93 89 00 	sts	0x0089, r22	; 0x800089 <Locomotion_Millis>
+ 4de:	70 93 8a 00 	sts	0x008A, r23	; 0x80008a <Locomotion_Millis+0x1>
+ 4e2:	80 93 8b 00 	sts	0x008B, r24	; 0x80008b <Locomotion_Millis+0x2>
+ 4e6:	90 93 8c 00 	sts	0x008C, r25	; 0x80008c <Locomotion_Millis+0x3>
+		} while( pgm_read_byte(Locomotion+2) == 0 );//if during is 0, go to next loop immediately
+ 4ea:	f3 01       	movw	r30, r6
+ 4ec:	32 96       	adiw	r30, 0x02	; 2
+ 4ee:	e4 91       	lpm	r30, Z
+	* If you want to change pre-set paramters and the order of pins, please check Robogami.cpp
+	* And when end this locomotion, Tribot send message which means Done locomotion.
+	* it is used in Pushing experiments.
+	*/
+  if( millis() - Locomotion_Millis >= (uint16_t)100*pgm_read_byte(Locomotion+2) ) {
+		do {
+ 4f0:	ee 23       	and	r30, r30
+ 4f2:	09 f4       	brne	.+2      	; 0x4f6 <_Z19autoLocomotionEventv+0xbe>
+ 4f4:	c6 cf       	rjmp	.-116    	; 0x482 <_Z19autoLocomotionEventv+0x4a>
+				Tribot.writePin(pgm_read_byte(Locomotion), pgm_read_byte(Locomotion+1) );//write pin
+			}
+			Locomotion_Millis = millis();//update millis
+		} while( pgm_read_byte(Locomotion+2) == 0 );//if during is 0, go to next loop immediately
+  }
+}
+ 4f6:	1f 91       	pop	r17
+ 4f8:	0f 91       	pop	r16
+ 4fa:	ff 90       	pop	r15
+ 4fc:	ef 90       	pop	r14
+ 4fe:	df 90       	pop	r13
+ 500:	cf 90       	pop	r12
+ 502:	08 95       	ret
+
+00000504 <_Z13setLocomotionPh>:
+}
+void setLocomotion(uint8_t *locomotion) {
+  /*
+	*This function start locomotion
+	*/
+	Locomotion = locomotion;
+ 504:	3c 01       	movw	r6, r24
+	saveGIMSK();					//infrared communication off
+ 506:	bd d4       	rcall	.+2426   	; 0xe82 <_Z9saveGIMSKv>
+  if( SFlags & _BV(MLF)) {//when with received parameters
+ 508:	52 fe       	sbrs	r5, 2
+ 50a:	08 c0       	rjmp	.+16     	; 0x51c <_Z13setLocomotionPh+0x18>
+		Locomotion_Idx = (uint8_t)(IDX_MESSAGE1);
+ 50c:	86 e0       	ldi	r24, 0x06	; 6
+ 50e:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <Locomotion_Idx>
+		Tribot.writePin(pgm_read_byte(Locomotion), Infrared_Buf[Locomotion_Idx]);
+ 512:	f3 01       	movw	r30, r6
+ 514:	64 91       	lpm	r22, Z
+ 516:	40 91 70 00 	lds	r20, 0x0070	; 0x800070 <__data_end+0x6>
+ 51a:	05 c0       	rjmp	.+10     	; 0x526 <_Z13setLocomotionPh+0x22>
+  }
+  else {//with pre-set parameters
+		Tribot.writePin(pgm_read_byte(Locomotion), pgm_read_byte(Locomotion+1));
+ 51c:	f3 01       	movw	r30, r6
+ 51e:	31 96       	adiw	r30, 0x01	; 1
+ 520:	44 91       	lpm	r20, Z
+ 522:	f3 01       	movw	r30, r6
+ 524:	64 91       	lpm	r22, Z
+ 526:	8e e8       	ldi	r24, 0x8E	; 142
+ 528:	90 e0       	ldi	r25, 0x00	; 0
+ 52a:	ba d1       	rcall	.+884    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+  }
+  Locomotion_Millis = millis();
+ 52c:	11 d4       	rcall	.+2082   	; 0xd50 <_Z6millisv>
+ 52e:	60 93 89 00 	sts	0x0089, r22	; 0x800089 <Locomotion_Millis>
+ 532:	70 93 8a 00 	sts	0x008A, r23	; 0x80008a <Locomotion_Millis+0x1>
+ 536:	80 93 8b 00 	sts	0x008B, r24	; 0x80008b <Locomotion_Millis+0x2>
+ 53a:	90 93 8c 00 	sts	0x008C, r25	; 0x80008c <Locomotion_Millis+0x3>
+ 53e:	08 95       	ret
+
+00000540 <_Z21translateFromInfraredPh>:
+  setTxArray(to, relay_Flag, command, message1, 0);
+}
+void setTxArray(uint8_t to, uint8_t relay_Flag, uint8_t command) {
+  setTxArray(to, relay_Flag, command, 0, 0);
+}
+uint8_t translateFromInfrared(uint8_t *infrared){
+ 540:	0f 93       	push	r16
+ 542:	cf 93       	push	r28
+ 544:	df 93       	push	r29
+ 546:	ec 01       	movw	r28, r24
+	* this function is translate command to "real" command
+	* what Tribot should do in each command is defined here
+	* this function is simple but so hard to read
+	*/
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+ 548:	09 81       	ldd	r16, Y+1	; 0x01
+ 54a:	8e e8       	ldi	r24, 0x8E	; 142
+ 54c:	90 e0       	ldi	r25, 0x00	; 0
+ 54e:	9f d1       	rcall	.+830    	; 0x88e <_ZN8Robogami5getIdEv>
+ 550:	08 17       	cp	r16, r24
+ 552:	59 f0       	breq	.+22     	; 0x56a <_Z21translateFromInfraredPh+0x2a>
+ 554:	09 81       	ldd	r16, Y+1	; 0x01
+ 556:	8e e8       	ldi	r24, 0x8E	; 142
+ 558:	90 e0       	ldi	r25, 0x00	; 0
+ 55a:	9f d1       	rcall	.+830    	; 0x89a <_ZN8Robogami7getRoleEv>
+ 55c:	08 17       	cp	r16, r24
+ 55e:	29 f0       	breq	.+10     	; 0x56a <_Z21translateFromInfraredPh+0x2a>
+ 560:	89 81       	ldd	r24, Y+1	; 0x01
+ 562:	89 36       	cpi	r24, 0x69	; 105
+ 564:	11 f0       	breq	.+4      	; 0x56a <_Z21translateFromInfraredPh+0x2a>
+		return false;
+ 566:	80 e0       	ldi	r24, 0x00	; 0
+ 568:	89 c0       	rjmp	.+274    	; 0x67c <_Z21translateFromInfraredPh+0x13c>
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 56a:	9d 81       	ldd	r25, Y+5	; 0x05
+ 56c:	9b 3c       	cpi	r25, 0xCB	; 203
+ 56e:	51 f5       	brne	.+84     	; 0x5c4 <_Z21translateFromInfraredPh+0x84>
+		case Infrareds::GET_OFFSET_FORE_SENSOR:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET1, (uint8_t)(Offset_SENSOR_FORE >> 8), (uint8_t)Offset_SENSOR_FORE);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::GET_OFFSET_BACK_SENSOR:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET2, (uint8_t)(Offset_SENSOR_BACK >> 8), (uint8_t)Offset_SENSOR_BACK);
+ 570:	00 91 60 00 	lds	r16, 0x0060	; 0x800060 <Offset_SENSOR_BACK>
+ 574:	20 91 61 00 	lds	r18, 0x0061	; 0x800061 <Offset_SENSOR_BACK+0x1>
+ 578:	0b c0       	rjmp	.+22     	; 0x590 <_Z21translateFromInfraredPh+0x50>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 57a:	9d 3c       	cpi	r25, 0xCD	; 205
+ 57c:	51 f5       	brne	.+84     	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+			Offset_SENSOR_FORE = measureProximityValue(Pins::SWI_SENSOR_FORE, 200); 
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET1, (uint8_t)(Offset_SENSOR_FORE >> 8), (uint8_t)Offset_SENSOR_FORE);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::SET_OFFSET_BACK_SENSOR:
+			Offset_SENSOR_BACK = measureProximityValue(Pins::SWI_SENSOR_BACK, 200);
+ 57e:	68 ec       	ldi	r22, 0xC8	; 200
+ 580:	89 e0       	ldi	r24, 0x09	; 9
+ 582:	77 de       	rcall	.-786    	; 0x272 <_Z21measureProximityValuehh>
+ 584:	27 2f       	mov	r18, r23
+ 586:	06 2f       	mov	r16, r22
+ 588:	60 93 60 00 	sts	0x0060, r22	; 0x800060 <Offset_SENSOR_BACK>
+ 58c:	70 93 61 00 	sts	0x0061, r23	; 0x800061 <Offset_SENSOR_BACK+0x1>
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET2, (uint8_t)(Offset_SENSOR_BACK >> 8), (uint8_t)Offset_SENSOR_BACK);
+ 590:	42 ed       	ldi	r20, 0xD2	; 210
+ 592:	60 91 6c 00 	lds	r22, 0x006C	; 0x80006c <__data_end+0x2>
+ 596:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <__data_end+0x3>
+ 59a:	17 df       	rcall	.-466    	; 0x3ca <_Z10setTxArrayhhhhh>
+ 59c:	0f c0       	rjmp	.+30     	; 0x5bc <_Z21translateFromInfraredPh+0x7c>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 59e:	99 3c       	cpi	r25, 0xC9	; 201
+ 5a0:	08 f5       	brcc	.+66     	; 0x5e4 <_Z21translateFromInfraredPh+0xa4>
+ 5a2:	95 35       	cpi	r25, 0x55	; 85
+ 5a4:	71 f5       	brne	.+92     	; 0x602 <_Z21translateFromInfraredPh+0xc2>
+		/*
+		case Infrareds::CHANGE_ROLE:
+			Tribot.setRole(*(infrared+1));
+			break;*/
+		case Infrareds::WRITE_ONE_PIN:
+			Tribot.writePin(*(infrared+1),*(infrared+2));
+ 5a6:	4f 81       	ldd	r20, Y+7	; 0x07
+ 5a8:	6e 81       	ldd	r22, Y+6	; 0x06
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::ACK);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::WRITE_TWO_PINS:
+			Tribot.writePin(*(infrared+1),*(infrared+2));
+			Tribot.writePin(*(infrared+3),*(infrared+4));
+ 5aa:	8e e8       	ldi	r24, 0x8E	; 142
+ 5ac:	90 e0       	ldi	r25, 0x00	; 0
+ 5ae:	78 d1       	rcall	.+752    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::ACK);
+ 5b0:	46 e3       	ldi	r20, 0x36	; 54
+ 5b2:	60 91 6c 00 	lds	r22, 0x006C	; 0x80006c <__data_end+0x2>
+ 5b6:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <__data_end+0x3>
+ 5ba:	38 df       	rcall	.-400    	; 0x42c <_Z10setTxArrayhhh>
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_FORE, 200), Pins::SWI_SENSOR_FORE));
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::GET_DISTANCE_BACKWARD:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_BACK, 200), Pins::SWI_SENSOR_BACK));
+			sendInfrared(Infrared_Buf);
+ 5bc:	8a e6       	ldi	r24, 0x6A	; 106
+ 5be:	90 e0       	ldi	r25, 0x00	; 0
+ 5c0:	89 d4       	rcall	.+2322   	; 0xed4 <_Z12sendInfraredPh>
+ 5c2:	07 c0       	rjmp	.+14     	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 5c4:	9c 3c       	cpi	r25, 0xCC	; 204
+ 5c6:	38 f0       	brcs	.+14     	; 0x5d6 <_Z21translateFromInfraredPh+0x96>
+ 5c8:	90 3d       	cpi	r25, 0xD0	; 208
+ 5ca:	61 f5       	brne	.+88     	; 0x624 <_Z21translateFromInfraredPh+0xe4>
+		case Infrareds::GET_DISTANCE_BACKWARD:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_BACK, 200), Pins::SWI_SENSOR_BACK));
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::RECEIVE_DISTANCE:
+			Distance = *(infrared+1);
+ 5cc:	8e 81       	ldd	r24, Y+6	; 0x06
+ 5ce:	80 93 8d 00 	sts	0x008D, r24	; 0x80008d <Distance>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 5d2:	81 e0       	ldi	r24, 0x01	; 1
+ 5d4:	53 c0       	rjmp	.+166    	; 0x67c <_Z21translateFromInfraredPh+0x13c>
+ 5d6:	98 3c       	cpi	r25, 0xC8	; 200
+ 5d8:	11 f7       	brne	.-60     	; 0x59e <_Z21translateFromInfraredPh+0x5e>
+			Offset_SENSOR_BACK = measureProximityValue(Pins::SWI_SENSOR_BACK, 200);
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET2, (uint8_t)(Offset_SENSOR_BACK >> 8), (uint8_t)Offset_SENSOR_BACK);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::GET_DISTANCE_FORWARD:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_FORE, 200), Pins::SWI_SENSOR_FORE));
+ 5da:	68 ec       	ldi	r22, 0xC8	; 200
+ 5dc:	8d e0       	ldi	r24, 0x0D	; 13
+ 5de:	49 de       	rcall	.-878    	; 0x272 <_Z21measureProximityValuehh>
+ 5e0:	4d e0       	ldi	r20, 0x0D	; 13
+ 5e2:	06 c0       	rjmp	.+12     	; 0x5f0 <_Z21translateFromInfraredPh+0xb0>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 5e4:	99 3c       	cpi	r25, 0xC9	; 201
+ 5e6:	b9 f4       	brne	.+46     	; 0x616 <_Z21translateFromInfraredPh+0xd6>
+		case Infrareds::GET_DISTANCE_FORWARD:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_FORE, 200), Pins::SWI_SENSOR_FORE));
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::GET_DISTANCE_BACKWARD:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_DISTANCE, calculateDistance(measureProximityValue(Pins::SWI_SENSOR_BACK, 200), Pins::SWI_SENSOR_BACK));
+ 5e8:	68 ec       	ldi	r22, 0xC8	; 200
+ 5ea:	89 e0       	ldi	r24, 0x09	; 9
+ 5ec:	42 de       	rcall	.-892    	; 0x272 <_Z21measureProximityValuehh>
+ 5ee:	49 e0       	ldi	r20, 0x09	; 9
+ 5f0:	aa de       	rcall	.-684    	; 0x346 <_Z17calculateDistancemh>
+ 5f2:	28 2f       	mov	r18, r24
+ 5f4:	40 ed       	ldi	r20, 0xD0	; 208
+ 5f6:	60 91 6c 00 	lds	r22, 0x006C	; 0x80006c <__data_end+0x2>
+ 5fa:	80 91 6d 00 	lds	r24, 0x006D	; 0x80006d <__data_end+0x3>
+ 5fe:	11 df       	rcall	.-478    	; 0x422 <_Z10setTxArrayhhhh>
+ 600:	dd cf       	rjmp	.-70     	; 0x5bc <_Z21translateFromInfraredPh+0x7c>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 602:	96 35       	cpi	r25, 0x56	; 86
+ 604:	31 f7       	brne	.-52     	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+			Tribot.writePin(*(infrared+1),*(infrared+2));
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::ACK);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::WRITE_TWO_PINS:
+			Tribot.writePin(*(infrared+1),*(infrared+2));
+ 606:	4f 81       	ldd	r20, Y+7	; 0x07
+ 608:	6e 81       	ldd	r22, Y+6	; 0x06
+ 60a:	8e e8       	ldi	r24, 0x8E	; 142
+ 60c:	90 e0       	ldi	r25, 0x00	; 0
+ 60e:	48 d1       	rcall	.+656    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+			Tribot.writePin(*(infrared+3),*(infrared+4));
+ 610:	49 85       	ldd	r20, Y+9	; 0x09
+ 612:	68 85       	ldd	r22, Y+8	; 0x08
+ 614:	ca cf       	rjmp	.-108    	; 0x5aa <_Z21translateFromInfraredPh+0x6a>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 616:	9a 3c       	cpi	r25, 0xCA	; 202
+ 618:	e1 f6       	brne	.-72     	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+			Tribot.writePin(*(infrared+3),*(infrared+4));
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::ACK);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::GET_OFFSET_FORE_SENSOR:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET1, (uint8_t)(Offset_SENSOR_FORE >> 8), (uint8_t)Offset_SENSOR_FORE);
+ 61a:	00 91 62 00 	lds	r16, 0x0062	; 0x800062 <Offset_SENSOR_FORE>
+ 61e:	20 91 63 00 	lds	r18, 0x0063	; 0x800063 <Offset_SENSOR_FORE+0x1>
+ 622:	0e c0       	rjmp	.+28     	; 0x640 <_Z21translateFromInfraredPh+0x100>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 624:	91 3d       	cpi	r25, 0xD1	; 209
+ 626:	70 f4       	brcc	.+28     	; 0x644 <_Z21translateFromInfraredPh+0x104>
+ 628:	9c 3c       	cpi	r25, 0xCC	; 204
+ 62a:	09 f0       	breq	.+2      	; 0x62e <_Z21translateFromInfraredPh+0xee>
+ 62c:	a6 cf       	rjmp	.-180    	; 0x57a <_Z21translateFromInfraredPh+0x3a>
+		case Infrareds::GET_OFFSET_BACK_SENSOR:
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET2, (uint8_t)(Offset_SENSOR_BACK >> 8), (uint8_t)Offset_SENSOR_BACK);
+			sendInfrared(Infrared_Buf);
+			break;
+		case Infrareds::SET_OFFSET_FORE_SENSOR:
+			Offset_SENSOR_FORE = measureProximityValue(Pins::SWI_SENSOR_FORE, 200); 
+ 62e:	68 ec       	ldi	r22, 0xC8	; 200
+ 630:	8d e0       	ldi	r24, 0x0D	; 13
+ 632:	1f de       	rcall	.-962    	; 0x272 <_Z21measureProximityValuehh>
+ 634:	27 2f       	mov	r18, r23
+ 636:	06 2f       	mov	r16, r22
+ 638:	60 93 62 00 	sts	0x0062, r22	; 0x800062 <Offset_SENSOR_FORE>
+ 63c:	70 93 63 00 	sts	0x0063, r23	; 0x800063 <Offset_SENSOR_FORE+0x1>
+			setTxArray(Infrared_Buf[IDX_FROM_ID], Infrared_Buf[IDX_RELAY_FLAG], Infrareds::RECEIVE_OFFSET1, (uint8_t)(Offset_SENSOR_FORE >> 8), (uint8_t)Offset_SENSOR_FORE);
+ 640:	41 ed       	ldi	r20, 0xD1	; 209
+ 642:	a7 cf       	rjmp	.-178    	; 0x592 <_Z21translateFromInfraredPh+0x52>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 644:	9d 3d       	cpi	r25, 0xDD	; 221
+ 646:	39 f4       	brne	.+14     	; 0x656 <_Z21translateFromInfraredPh+0x116>
+			break;
+		case Infrareds::CRAWL_FORWARD_AUTO:
+			setLocomotion((uint8_t*)Tasks::CRAWL_FORWARD_AUTO);
+			break;
+		case Infrareds::CRAWL_FORWARD_MANUAL:
+			SFlags |= _BV(MLF);
+ 648:	85 2d       	mov	r24, r5
+ 64a:	84 60       	ori	r24, 0x04	; 4
+ 64c:	58 2e       	mov	r5, r24
+			setLocomotion((uint8_t*)Tasks::CRAWL_FORWARD_MANUAL);
+ 64e:	85 e9       	ldi	r24, 0x95	; 149
+ 650:	90 e0       	ldi	r25, 0x00	; 0
+ 652:	58 df       	rcall	.-336    	; 0x504 <_Z13setLocomotionPh>
+ 654:	be cf       	rjmp	.-132    	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 656:	9c 3f       	cpi	r25, 0xFC	; 252
+ 658:	59 f4       	brne	.+22     	; 0x670 <_Z21translateFromInfraredPh+0x130>
+			SFlags |= _BV(MLF);
+			setLocomotion((uint8_t*)Tasks::CRAWL_BACKWARD_MANUAL);
+			break;
+		//*/
+		case Infrareds::PUSH:
+			SFlags |= _BV(PSF);
+ 65a:	85 2d       	mov	r24, r5
+ 65c:	80 61       	ori	r24, 0x10	; 16
+ 65e:	58 2e       	mov	r5, r24
+			Pushing_Threshoud = *(infrared+1);
+ 660:	8e 81       	ldd	r24, Y+6	; 0x06
+ 662:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <Pushing_Threshoud>
+			setTxArray(LEADER, RELAY, Infrareds::DONE_TASK);
+ 666:	45 e3       	ldi	r20, 0x35	; 53
+ 668:	68 e6       	ldi	r22, 0x68	; 104
+ 66a:	85 e6       	ldi	r24, 0x65	; 101
+ 66c:	df de       	rcall	.-578    	; 0x42c <_Z10setTxArrayhhh>
+ 66e:	b1 cf       	rjmp	.-158    	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+  infrared += LEN_INFRARED_BOM;//Idx set to ID_IDX
+  if (*infrared != Tribot.getId() && *infrared != Tribot.getRole() && *infrared != ALL) {//if this messages is not for this Tribot
+		return false;
+  }
+  infrared += LEN_INFRARED_HEADER;//Idx set to Command_IDX
+  switch (*infrared) {
+ 670:	9c 3d       	cpi	r25, 0xDC	; 220
+ 672:	09 f0       	breq	.+2      	; 0x676 <_Z21translateFromInfraredPh+0x136>
+ 674:	ae cf       	rjmp	.-164    	; 0x5d2 <_Z21translateFromInfraredPh+0x92>
+			break;
+		case Infrareds::RECEIVE_DISTANCE:
+			Distance = *(infrared+1);
+			break;
+		case Infrareds::CRAWL_FORWARD_AUTO:
+			setLocomotion((uint8_t*)Tasks::CRAWL_FORWARD_AUTO);
+ 676:	8a e7       	ldi	r24, 0x7A	; 122
+ 678:	90 e0       	ldi	r25, 0x00	; 0
+ 67a:	eb cf       	rjmp	.-42     	; 0x652 <_Z21translateFromInfraredPh+0x112>
+    default:
+			//blink(Pins::LED_R, 2);
+			break; 
+  }
+  return true;
+}
+ 67c:	df 91       	pop	r29
+ 67e:	cf 91       	pop	r28
+ 680:	0f 91       	pop	r16
+ 682:	08 95       	ret
+
+00000684 <_Z22infraredAvailableEventv>:
+	}
+  if( isEmptyRxBuf() ) {//if it reads all received data
+		initializeRxIdxs();
+  }
+}
+void infraredAvailableEvent(void) {//This is called when Infrared_buf has data
+ 684:	cf 93       	push	r28
+	translateFromInfrared(Infrared_Buf);										//Translate message
+ 686:	8a e6       	ldi	r24, 0x6A	; 106
+ 688:	90 e0       	ldi	r25, 0x00	; 0
+ 68a:	5a df       	rcall	.-332    	; 0x540 <_Z21translateFromInfraredPh>
+	if( Infrared_Buf[IDX_RELAY_FLAG] == Tribot.getRole()) {	//If relay flag is for this robot
+ 68c:	c0 91 6c 00 	lds	r28, 0x006C	; 0x80006c <__data_end+0x2>
+ 690:	8e e8       	ldi	r24, 0x8E	; 142
+ 692:	90 e0       	ldi	r25, 0x00	; 0
+ 694:	02 d1       	rcall	.+516    	; 0x89a <_ZN8Robogami7getRoleEv>
+ 696:	c8 13       	cpse	r28, r24
+ 698:	04 c0       	rjmp	.+8      	; 0x6a2 <_Z22infraredAvailableEventv+0x1e>
+		sendInfrared(Infrared_Buf);														//Play a role as mirror
+ 69a:	8a e6       	ldi	r24, 0x6A	; 106
+ 69c:	90 e0       	ldi	r25, 0x00	; 0
+ 69e:	1a d4       	rcall	.+2100   	; 0xed4 <_Z12sendInfraredPh>
+ 6a0:	09 c0       	rjmp	.+18     	; 0x6b4 <_Z22infraredAvailableEventv+0x30>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 6a2:	2f e7       	ldi	r18, 0x7F	; 127
+ 6a4:	88 e3       	ldi	r24, 0x38	; 56
+ 6a6:	91 e0       	ldi	r25, 0x01	; 1
+ 6a8:	21 50       	subi	r18, 0x01	; 1
+ 6aa:	80 40       	sbci	r24, 0x00	; 0
+ 6ac:	90 40       	sbci	r25, 0x00	; 0
+ 6ae:	e1 f7       	brne	.-8      	; 0x6a8 <_Z22infraredAvailableEventv+0x24>
+ 6b0:	00 c0       	rjmp	.+0      	; 0x6b2 <_Z22infraredAvailableEventv+0x2e>
+ 6b2:	00 00       	nop
+	}
+	else {
+		_delay_ms(50);
+	}
+	SFlags &= ~_BV(IAF);	//clear flag
+ 6b4:	25 2d       	mov	r18, r5
+ 6b6:	27 7f       	andi	r18, 0xF7	; 247
+ 6b8:	52 2e       	mov	r5, r18
+	loadGIMSK();					//infrared communication on
+}
+ 6ba:	cf 91       	pop	r28
+	}
+	else {
+		_delay_ms(50);
+	}
+	SFlags &= ~_BV(IAF);	//clear flag
+	loadGIMSK();					//infrared communication on
+ 6bc:	f7 c3       	rjmp	.+2030   	; 0xeac <_Z9loadGIMSKv>
+
+000006be <_Z11blinkLedRedh>:
+  else {//with pre-set parameters
+		Tribot.writePin(pgm_read_byte(Locomotion), pgm_read_byte(Locomotion+1));
+  }
+  Locomotion_Millis = millis();
+}
+void blinkLedRed(uint8_t i) {
+ 6be:	1f 93       	push	r17
+ 6c0:	cf 93       	push	r28
+ 6c2:	df 93       	push	r29
+ 6c4:	c8 2f       	mov	r28, r24
+	saveGIMSK();				//while blinking, in short time, Tribot can do nothing, so communication should be turned off
+ 6c6:	dd d3       	rcall	.+1978   	; 0xe82 <_Z9saveGIMSKv>
+	Tribot.writePin(Pins::LED_R, LOW);
+ 6c8:	40 e0       	ldi	r20, 0x00	; 0
+ 6ca:	62 e0       	ldi	r22, 0x02	; 2
+ 6cc:	8e e8       	ldi	r24, 0x8E	; 142
+ 6ce:	90 e0       	ldi	r25, 0x00	; 0
+ 6d0:	e7 d0       	rcall	.+462    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+	i*=2;
+ 6d2:	cc 0f       	add	r28, r28
+	bool value = HIGH;
+ 6d4:	d1 e0       	ldi	r29, 0x01	; 1
+	for(; i>0; i--) {
+		Tribot.writePin(Pins::LED_R, value);
+		_delay_ms(100);
+		value = !value;
+ 6d6:	11 e0       	ldi	r17, 0x01	; 1
+void blinkLedRed(uint8_t i) {
+	saveGIMSK();				//while blinking, in short time, Tribot can do nothing, so communication should be turned off
+	Tribot.writePin(Pins::LED_R, LOW);
+	i*=2;
+	bool value = HIGH;
+	for(; i>0; i--) {
+ 6d8:	cc 23       	and	r28, r28
+ 6da:	89 f0       	breq	.+34     	; 0x6fe <_Z11blinkLedRedh+0x40>
+		Tribot.writePin(Pins::LED_R, value);
+ 6dc:	4d 2f       	mov	r20, r29
+ 6de:	62 e0       	ldi	r22, 0x02	; 2
+ 6e0:	8e e8       	ldi	r24, 0x8E	; 142
+ 6e2:	90 e0       	ldi	r25, 0x00	; 0
+ 6e4:	dd d0       	rcall	.+442    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+ 6e6:	2f ef       	ldi	r18, 0xFF	; 255
+ 6e8:	80 e7       	ldi	r24, 0x70	; 112
+ 6ea:	92 e0       	ldi	r25, 0x02	; 2
+ 6ec:	21 50       	subi	r18, 0x01	; 1
+ 6ee:	80 40       	sbci	r24, 0x00	; 0
+ 6f0:	90 40       	sbci	r25, 0x00	; 0
+ 6f2:	e1 f7       	brne	.-8      	; 0x6ec <_Z11blinkLedRedh+0x2e>
+ 6f4:	00 c0       	rjmp	.+0      	; 0x6f6 <_Z11blinkLedRedh+0x38>
+ 6f6:	00 00       	nop
+		_delay_ms(100);
+		value = !value;
+ 6f8:	d1 27       	eor	r29, r17
+void blinkLedRed(uint8_t i) {
+	saveGIMSK();				//while blinking, in short time, Tribot can do nothing, so communication should be turned off
+	Tribot.writePin(Pins::LED_R, LOW);
+	i*=2;
+	bool value = HIGH;
+	for(; i>0; i--) {
+ 6fa:	c1 50       	subi	r28, 0x01	; 1
+ 6fc:	ed cf       	rjmp	.-38     	; 0x6d8 <_Z11blinkLedRedh+0x1a>
+		Tribot.writePin(Pins::LED_R, value);
+		_delay_ms(100);
+		value = !value;
+	}
+	loadGIMSK();
+}
+ 6fe:	df 91       	pop	r29
+ 700:	cf 91       	pop	r28
+ 702:	1f 91       	pop	r17
+	for(; i>0; i--) {
+		Tribot.writePin(Pins::LED_R, value);
+		_delay_ms(100);
+		value = !value;
+	}
+	loadGIMSK();
+ 704:	d3 c3       	rjmp	.+1958   	; 0xeac <_Z9loadGIMSKv>
+
+00000706 <_Z14rxReceiveEventv>:
+  //
+  //turn LED_G on
+  //
+  Tribot.writePin(Pins::LED_G, HIGH);
+}
+void rxReceiveEvent(void) {
+ 706:	cf 92       	push	r12
+ 708:	df 92       	push	r13
+ 70a:	ef 92       	push	r14
+ 70c:	ff 92       	push	r15
+ 70e:	cf 93       	push	r28
+	* Tribot use interrupt function which is declared in wiring.cpp to receive infrared messages.
+ 	* These data are stored in Rx_Buf and temporally and then they are read into Infrared_Buf from Beginning of Message(BOM) to End of Message(EOM)
+	* One message composed of BOM,  Target_ID, Relay Flag, command, some parameters and EOM. 
+	*/
+	uint8_t error = false;
+  Infrared_Buf[0] = rxRead();								//Read 1 character
+ 710:	2e d3       	rcall	.+1628   	; 0xd6e <_Z6rxReadv>
+ 712:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <__data_end>
+  if ( Infrared_Buf[0] == Infrareds::BOM ) {//Found Beginning of message
+ 716:	80 3c       	cpi	r24, 0xC0	; 192
+ 718:	61 f5       	brne	.+88     	; 0x772 <_Z14rxReceiveEventv+0x6c>
+		Infrared_Idx = LEN_INFRARED_BOM;				//Initialize Infrared_Idx
+ 71a:	44 24       	eor	r4, r4
+ 71c:	43 94       	inc	r4
+		unsigned long rxMillis = millis();			//For Time out
+ 71e:	18 d3       	rcall	.+1584   	; 0xd50 <_Z6millisv>
+ 720:	6b 01       	movw	r12, r22
+ 722:	7c 01       	movw	r14, r24
+		//
+		//Beginning of reading loop
+		do {
+			if ( rxAvailable() ) {//if there are unread data
+ 724:	21 d3       	rcall	.+1602   	; 0xd68 <_Z11rxAvailablev>
+ 726:	88 23       	and	r24, r24
+ 728:	51 f0       	breq	.+20     	; 0x73e <_Z14rxReceiveEventv+0x38>
+				Infrared_Buf[Infrared_Idx++] = rxRead();//read 1 character
+ 72a:	c4 2d       	mov	r28, r4
+ 72c:	21 e0       	ldi	r18, 0x01	; 1
+ 72e:	24 0d       	add	r18, r4
+ 730:	42 2e       	mov	r4, r18
+ 732:	1d d3       	rcall	.+1594   	; 0xd6e <_Z6rxReadv>
+ 734:	ec 2f       	mov	r30, r28
+ 736:	f0 e0       	ldi	r31, 0x00	; 0
+ 738:	e6 59       	subi	r30, 0x96	; 150
+ 73a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 73c:	80 83       	st	Z, r24
+			}
+			if ( millis() - rxMillis > RECEIVE_TIMEOUT || Infrared_Idx > INFRARED_BUF_LEN-2 ) {//Time out
+ 73e:	08 d3       	rcall	.+1552   	; 0xd50 <_Z6millisv>
+ 740:	dc 01       	movw	r26, r24
+ 742:	cb 01       	movw	r24, r22
+ 744:	8c 19       	sub	r24, r12
+ 746:	9d 09       	sbc	r25, r13
+ 748:	ae 09       	sbc	r26, r14
+ 74a:	bf 09       	sbc	r27, r15
+ 74c:	89 3e       	cpi	r24, 0xE9	; 233
+ 74e:	93 40       	sbci	r25, 0x03	; 3
+ 750:	a1 05       	cpc	r26, r1
+ 752:	b1 05       	cpc	r27, r1
+ 754:	b8 f4       	brcc	.+46     	; 0x784 <_Z14rxReceiveEventv+0x7e>
+ 756:	e4 2d       	mov	r30, r4
+ 758:	ed 31       	cpi	r30, 0x1D	; 29
+ 75a:	a0 f4       	brcc	.+40     	; 0x784 <_Z14rxReceiveEventv+0x7e>
+				error = true;	//Now error happened		
+				break;
+			}
+		} while( Infrared_Buf[Infrared_Idx-1] != Infrareds::EOM );//read until EOM
+ 75c:	e4 2d       	mov	r30, r4
+ 75e:	f0 e0       	ldi	r31, 0x00	; 0
+ 760:	e7 59       	subi	r30, 0x97	; 151
+ 762:	ff 4f       	sbci	r31, 0xFF	; 255
+  if ( Infrared_Buf[0] == Infrareds::BOM ) {//Found Beginning of message
+		Infrared_Idx = LEN_INFRARED_BOM;				//Initialize Infrared_Idx
+		unsigned long rxMillis = millis();			//For Time out
+		//
+		//Beginning of reading loop
+		do {
+ 764:	80 81       	ld	r24, Z
+ 766:	81 3c       	cpi	r24, 0xC1	; 193
+ 768:	e9 f6       	brne	.-70     	; 0x724 <_Z14rxReceiveEventv+0x1e>
+			}
+		} while( Infrared_Buf[Infrared_Idx-1] != Infrareds::EOM );//read until EOM
+		//End of reading loop
+		//
+		if ( error == false ) {//if receiving is done successfully 
+			saveGIMSK();					//Infrared communication off
+ 76a:	8b d3       	rcall	.+1814   	; 0xe82 <_Z9saveGIMSKv>
+			SFlags |= _BV(IAF);		//Now set flag and there is reasonable message in Infrared_Buf
+ 76c:	85 2d       	mov	r24, r5
+ 76e:	88 60       	ori	r24, 0x08	; 8
+ 770:	58 2e       	mov	r5, r24
+		}
+		else {//if fail
+			blinkLedRed(1);	//blink red led once
+		}		
+	}
+  if( isEmptyRxBuf() ) {//if it reads all received data
+ 772:	09 d3       	rcall	.+1554   	; 0xd86 <_Z12isEmptyRxBufv>
+ 774:	88 23       	and	r24, r24
+ 776:	49 f0       	breq	.+18     	; 0x78a <_Z14rxReceiveEventv+0x84>
+		initializeRxIdxs();
+  }
+}
+ 778:	cf 91       	pop	r28
+ 77a:	ff 90       	pop	r15
+ 77c:	ef 90       	pop	r14
+ 77e:	df 90       	pop	r13
+ 780:	cf 90       	pop	r12
+		else {//if fail
+			blinkLedRed(1);	//blink red led once
+		}		
+	}
+  if( isEmptyRxBuf() ) {//if it reads all received data
+		initializeRxIdxs();
+ 782:	fe c2       	rjmp	.+1532   	; 0xd80 <_Z16initializeRxIdxsv>
+		if ( error == false ) {//if receiving is done successfully 
+			saveGIMSK();					//Infrared communication off
+			SFlags |= _BV(IAF);		//Now set flag and there is reasonable message in Infrared_Buf
+		}
+		else {//if fail
+			blinkLedRed(1);	//blink red led once
+ 784:	81 e0       	ldi	r24, 0x01	; 1
+ 786:	9b df       	rcall	.-202    	; 0x6be <_Z11blinkLedRedh>
+ 788:	f4 cf       	rjmp	.-24     	; 0x772 <_Z14rxReceiveEventv+0x6c>
+		}		
+	}
+  if( isEmptyRxBuf() ) {//if it reads all received data
+		initializeRxIdxs();
+  }
+}
+ 78a:	cf 91       	pop	r28
+ 78c:	ff 90       	pop	r15
+ 78e:	ef 90       	pop	r14
+ 790:	df 90       	pop	r13
+ 792:	cf 90       	pop	r12
+ 794:	08 95       	ret
+
+00000796 <_Z12pushingEventv>:
+	* when it receive receive_distance command it means measuring is done, leader Tribot judge distance is bigger than threshold or not.
+	* if distance is bigger, Leader Tribot send pushing Tribot command "crawlingforwardauto" which means it have to crawl with pre-set parameters.
+	* Pushing Tribots return message "Done_task" at the end of crawling, and then Leader Tribot is in the case when it receive done task command. 
+	*/
+	///*
+	if (Infrared_Buf[IDX_COMMAND] == Infrareds::DONE_TASK) {//if one pushing cycle(crawling) is done
+ 796:	80 91 6f 00 	lds	r24, 0x006F	; 0x80006f <__data_end+0x5>
+ 79a:	85 33       	cpi	r24, 0x35	; 53
+ 79c:	91 f4       	brne	.+36     	; 0x7c2 <_Z12pushingEventv+0x2c>
+ 79e:	2f e7       	ldi	r18, 0x7F	; 127
+ 7a0:	88 e3       	ldi	r24, 0x38	; 56
+ 7a2:	91 e0       	ldi	r25, 0x01	; 1
+ 7a4:	21 50       	subi	r18, 0x01	; 1
+ 7a6:	80 40       	sbci	r24, 0x00	; 0
+ 7a8:	90 40       	sbci	r25, 0x00	; 0
+ 7aa:	e1 f7       	brne	.-8      	; 0x7a4 <_Z12pushingEventv+0xe>
+ 7ac:	00 c0       	rjmp	.+0      	; 0x7ae <_Z12pushingEventv+0x18>
+ 7ae:	00 00       	nop
+		_delay_ms(50);																								//It's necessary to prevent communication failure
+		setTxArray(MEASURE, RELAY, Infrareds::GET_DISTANCE_FORWARD);	//set message to make measuring Tribot measure distance
+ 7b0:	48 ec       	ldi	r20, 0xC8	; 200
+ 7b2:	68 e6       	ldi	r22, 0x68	; 104
+ 7b4:	86 e6       	ldi	r24, 0x66	; 102
+ 7b6:	3a de       	rcall	.-908    	; 0x42c <_Z10setTxArrayhhh>
+		sendInfrared(Infrared_Buf);																		//send message
+ 7b8:	8a e6       	ldi	r24, 0x6A	; 106
+ 7ba:	90 e0       	ldi	r25, 0x00	; 0
+ 7bc:	8b d3       	rcall	.+1814   	; 0xed4 <_Z12sendInfraredPh>
+		Tribot.writePin(Pins::LED_R, LOW);														//Turn Red LED off
+ 7be:	40 e0       	ldi	r20, 0x00	; 0
+ 7c0:	2b c0       	rjmp	.+86     	; 0x818 <_Z12pushingEventv+0x82>
+  }
+  else if (Infrared_Buf[IDX_COMMAND] == Infrareds::RECEIVE_DISTANCE) {//if receive distance 
+ 7c2:	80 3d       	cpi	r24, 0xD0	; 208
+ 7c4:	c9 f5       	brne	.+114    	; 0x838 <_Z12pushingEventv+0xa2>
+ 7c6:	2f e7       	ldi	r18, 0x7F	; 127
+ 7c8:	88 e3       	ldi	r24, 0x38	; 56
+ 7ca:	91 e0       	ldi	r25, 0x01	; 1
+ 7cc:	21 50       	subi	r18, 0x01	; 1
+ 7ce:	80 40       	sbci	r24, 0x00	; 0
+ 7d0:	90 40       	sbci	r25, 0x00	; 0
+ 7d2:	e1 f7       	brne	.-8      	; 0x7cc <_Z12pushingEventv+0x36>
+ 7d4:	00 c0       	rjmp	.+0      	; 0x7d6 <_Z12pushingEventv+0x40>
+ 7d6:	00 00       	nop
+		_delay_ms(50);																									//It's necessary to prevent communication failure
+		setTxArray(BASEMENT, 0, Infrareds::RECEIVE_DISTANCE, Distance);	//set message to inform distance to Basement
+ 7d8:	20 91 8d 00 	lds	r18, 0x008D	; 0x80008d <Distance>
+ 7dc:	40 ed       	ldi	r20, 0xD0	; 208
+ 7de:	60 e0       	ldi	r22, 0x00	; 0
+ 7e0:	84 e6       	ldi	r24, 0x64	; 100
+ 7e2:	1f de       	rcall	.-962    	; 0x422 <_Z10setTxArrayhhhh>
+		sendInfrared(Infrared_Buf);																			//send message
+ 7e4:	8a e6       	ldi	r24, 0x6A	; 106
+ 7e6:	90 e0       	ldi	r25, 0x00	; 0
+ 7e8:	75 d3       	rcall	.+1770   	; 0xed4 <_Z12sendInfraredPh>
+ 7ea:	2f ef       	ldi	r18, 0xFF	; 255
+ 7ec:	80 e7       	ldi	r24, 0x70	; 112
+ 7ee:	92 e0       	ldi	r25, 0x02	; 2
+ 7f0:	21 50       	subi	r18, 0x01	; 1
+ 7f2:	80 40       	sbci	r24, 0x00	; 0
+ 7f4:	90 40       	sbci	r25, 0x00	; 0
+ 7f6:	e1 f7       	brne	.-8      	; 0x7f0 <_Z12pushingEventv+0x5a>
+ 7f8:	00 c0       	rjmp	.+0      	; 0x7fa <_Z12pushingEventv+0x64>
+ 7fa:	00 00       	nop
+		_delay_ms(100);																									//It's necessary to prevent communication failure
+		if ( Distance > Pushing_Threshoud ) {//keep pushing
+ 7fc:	90 91 8d 00 	lds	r25, 0x008D	; 0x80008d <Distance>
+ 800:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <Pushing_Threshoud>
+ 804:	89 17       	cp	r24, r25
+ 806:	60 f4       	brcc	.+24     	; 0x820 <_Z12pushingEventv+0x8a>
+			setTxArray(PUSH, 0, Infrareds::CRAWL_FORWARD_AUTO);						//set message to make pushing Tribot push
+ 808:	4c ed       	ldi	r20, 0xDC	; 220
+ 80a:	60 e0       	ldi	r22, 0x00	; 0
+ 80c:	87 e6       	ldi	r24, 0x67	; 103
+ 80e:	0e de       	rcall	.-996    	; 0x42c <_Z10setTxArrayhhh>
+			sendInfrared(Infrared_Buf);																		//send message
+ 810:	8a e6       	ldi	r24, 0x6A	; 106
+ 812:	90 e0       	ldi	r25, 0x00	; 0
+ 814:	5f d3       	rcall	.+1726   	; 0xed4 <_Z12sendInfraredPh>
+			Tribot.writePin(Pins::LED_R, HIGH);	//Turn Red LED on on-red led means now one pushing is being done
+ 816:	41 e0       	ldi	r20, 0x01	; 1
+ 818:	62 e0       	ldi	r22, 0x02	; 2
+ 81a:	8e e8       	ldi	r24, 0x8E	; 142
+ 81c:	90 e0       	ldi	r25, 0x00	; 0
+ 81e:	40 c0       	rjmp	.+128    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+		}
+		else {
+			setTxArray(BASEMENT, 0, Infrareds::DONE_TASK);	// set message to inform pushing is done to basement
+ 820:	45 e3       	ldi	r20, 0x35	; 53
+ 822:	60 e0       	ldi	r22, 0x00	; 0
+ 824:	84 e6       	ldi	r24, 0x64	; 100
+ 826:	02 de       	rcall	.-1020   	; 0x42c <_Z10setTxArrayhhh>
+			sendInfrared(Infrared_Buf);											//send message
+ 828:	8a e6       	ldi	r24, 0x6A	; 106
+ 82a:	90 e0       	ldi	r25, 0x00	; 0
+ 82c:	53 d3       	rcall	.+1702   	; 0xed4 <_Z12sendInfraredPh>
+			SFlags &= ~_BV(PSF);														//Clear flag
+ 82e:	25 2d       	mov	r18, r5
+ 830:	2f 7e       	andi	r18, 0xEF	; 239
+ 832:	52 2e       	mov	r5, r18
+			blinkLedRed(5);																	//to inform 
+ 834:	85 e0       	ldi	r24, 0x05	; 5
+ 836:	43 cf       	rjmp	.-378    	; 0x6be <_Z11blinkLedRedh>
+ 838:	08 95       	ret
+
+0000083a <main>:
+//
+//Functions
+//
+int main(void) {
+  //setup should be called first.
+	setup();
+ 83a:	76 dc       	rcall	.-1812   	; 0x128 <_Z5setupv>
+	//
+	//main loop
+	//
+	while(1) {
+		while(rxAvailable() & !(SFlags & _BV(IAF)) ) {//If Rx_buf have message
+ 83c:	95 d2       	rcall	.+1322   	; 0xd68 <_Z11rxAvailablev>
+ 83e:	90 e0       	ldi	r25, 0x00	; 0
+ 840:	21 e0       	ldi	r18, 0x01	; 1
+ 842:	30 e0       	ldi	r19, 0x00	; 0
+ 844:	45 2d       	mov	r20, r5
+ 846:	48 70       	andi	r20, 0x08	; 8
+ 848:	53 fe       	sbrs	r5, 3
+ 84a:	02 c0       	rjmp	.+4      	; 0x850 <main+0x16>
+ 84c:	20 e0       	ldi	r18, 0x00	; 0
+ 84e:	30 e0       	ldi	r19, 0x00	; 0
+ 850:	28 23       	and	r18, r24
+ 852:	39 23       	and	r19, r25
+ 854:	23 2b       	or	r18, r19
+ 856:	11 f0       	breq	.+4      	; 0x85c <main+0x22>
+			rxReceiveEvent();
+ 858:	56 df       	rcall	.-340    	; 0x706 <_Z14rxReceiveEventv>
+ 85a:	f0 cf       	rjmp	.-32     	; 0x83c <main+0x2>
+		}
+		if( SFlags & _BV(IAF) ) {//If Infrared_buf have message
+ 85c:	41 11       	cpse	r20, r1
+			infraredAvailableEvent();
+ 85e:	12 df       	rcall	.-476    	; 0x684 <_Z22infraredAvailableEventv>
+		}
+		if ( Locomotion != NULL ) {//If Tribot is doing a locmotion
+ 860:	61 14       	cp	r6, r1
+ 862:	71 04       	cpc	r7, r1
+ 864:	29 f0       	breq	.+10     	; 0x870 <main+0x36>
+			if( SFlags & _BV(MLF)) {
+ 866:	52 fe       	sbrs	r5, 2
+ 868:	02 c0       	rjmp	.+4      	; 0x86e <main+0x34>
+				manualLocomotionEvent();
+ 86a:	a2 dc       	rcall	.-1724   	; 0x1b0 <_Z21manualLocomotionEventv>
+ 86c:	01 c0       	rjmp	.+2      	; 0x870 <main+0x36>
+			}
+			else {
+				autoLocomotionEvent();
+ 86e:	e4 dd       	rcall	.-1080   	; 0x438 <_Z19autoLocomotionEventv>
+			}
+		}
+		if ( SFlags & _BV(PSF) ) {//If Tribot(Leader) is doing pushing
+ 870:	54 fe       	sbrs	r5, 4
+ 872:	e4 cf       	rjmp	.-56     	; 0x83c <main+0x2>
+			pushingEvent();
+ 874:	90 df       	rcall	.-224    	; 0x796 <_Z12pushingEventv>
+ 876:	e2 cf       	rjmp	.-60     	; 0x83c <main+0x2>
+
+00000878 <_ZN8Robogami5beginEv>:
+	/*
+	* This function set pin Mode as input or output
+	* DDRB |= _BV(PORTB0) means set DDRB's bit 0 1 and now PORTB0 is output
+	* DDRB |= _BV(PORTB0) | _BV(PORTB1) means now PORTB0 and PORTB1 are set as output
+	*/
+	DDRA |= _BV(PORTA1);
+ 878:	d1 9a       	sbi	0x1a, 1	; 26
+	DDRB |= _BV(PORTB0) | _BV(PORTB1) | _BV(PORTB2) | _BV(PORTB3) | _BV(PORTB4);
+ 87a:	87 b3       	in	r24, 0x17	; 23
+ 87c:	8f 61       	ori	r24, 0x1F	; 31
+ 87e:	87 bb       	out	0x17, r24	; 23
+	DDRD |= _BV(PORTD1) | _BV(PORTD5) | _BV(PORTD6);
+ 880:	81 b3       	in	r24, 0x11	; 17
+ 882:	82 66       	ori	r24, 0x62	; 98
+ 884:	81 bb       	out	0x11, r24	; 17
+ 886:	08 95       	ret
+
+00000888 <_ZN8Robogami5setIdEh>:
+
+}
+void Robogami::setId(uint8_t id) {
+	Robogami::id = id;
+ 888:	fc 01       	movw	r30, r24
+ 88a:	60 83       	st	Z, r22
+ 88c:	08 95       	ret
+
+0000088e <_ZN8Robogami5getIdEv>:
+}
+uint8_t Robogami::getId(void) {
+	return Robogami::id;
+}
+ 88e:	fc 01       	movw	r30, r24
+ 890:	80 81       	ld	r24, Z
+ 892:	08 95       	ret
+
+00000894 <_ZN8Robogami7setRoleEh>:
+void Robogami::setRole(uint8_t role) {
+	Robogami::role = role;
+ 894:	fc 01       	movw	r30, r24
+ 896:	61 83       	std	Z+1, r22	; 0x01
+ 898:	08 95       	ret
+
+0000089a <_ZN8Robogami7getRoleEv>:
+}
+uint8_t Robogami::getRole(void) {
+	return Robogami::role;
+}
+ 89a:	fc 01       	movw	r30, r24
+ 89c:	81 81       	ldd	r24, Z+1	; 0x01
+ 89e:	08 95       	ret
+
+000008a0 <_ZN8Robogami8writePinEhh>:
+void Robogami::writePin(uint8_t pin, uint8_t value) {
+	/* This function is for writing pin.
+	* I combined digitalWrite and analogWrite, and simplify because I had to save flush memory
+	* Attiny4313 has two timer: timer0 and timer1 each of them has two PWM channel so totally attiny has 4 PWM channel
+	*/
+	switch (pin) {
+ 8a0:	6a 30       	cpi	r22, 0x0A	; 10
+ 8a2:	61 f1       	breq	.+88     	; 0x8fc <_ZN8Robogami8writePinEhh+0x5c>
+ 8a4:	48 f4       	brcc	.+18     	; 0x8b8 <_ZN8Robogami8writePinEhh+0x18>
+ 8a6:	67 30       	cpi	r22, 0x07	; 7
+ 8a8:	a9 f0       	breq	.+42     	; 0x8d4 <_ZN8Robogami8writePinEhh+0x34>
+ 8aa:	68 30       	cpi	r22, 0x08	; 8
+ 8ac:	61 f5       	brne	.+88     	; 0x906 <_ZN8Robogami8writePinEhh+0x66>
+			if(value == 0) {TCCR1A &= ~_BV(COM1A1);}//disconnect timer1 from PORTB3
+			else {TCCR1A |= _BV(COM1A1);}						//connect timer1 to PORTB3
+			OCR1A = value;													//duty = OCR1A/256
+			break;
+		case Pins::TORSIONAL_L:										//PWM for torsional SMA is realized by software PWM which frequence is almost 48Hz
+			Duty_Torsional_L = value;								//Duty should be set 0 to 10, if you set duty 5, "real duty value" is 0.5, 50%. 
+ 8ae:	40 93 93 00 	sts	0x0093, r20	; 0x800093 <Duty_Torsional_L>
+			Counter_Torsional_L = 0;								//initialize counter 
+ 8b2:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <Counter_Torsional_L>
+			break;
+ 8b6:	08 95       	ret
+void Robogami::writePin(uint8_t pin, uint8_t value) {
+	/* This function is for writing pin.
+	* I combined digitalWrite and analogWrite, and simplify because I had to save flush memory
+	* Attiny4313 has two timer: timer0 and timer1 each of them has two PWM channel so totally attiny has 4 PWM channel
+	*/
+	switch (pin) {
+ 8b8:	6b 30       	cpi	r22, 0x0B	; 11
+ 8ba:	19 f0       	breq	.+6      	; 0x8c2 <_ZN8Robogami8writePinEhh+0x22>
+ 8bc:	6c 30       	cpi	r22, 0x0C	; 12
+ 8be:	99 f0       	breq	.+38     	; 0x8e6 <_ZN8Robogami8writePinEhh+0x46>
+ 8c0:	22 c0       	rjmp	.+68     	; 0x906 <_ZN8Robogami8writePinEhh+0x66>
+		case 11://PORTB2
+			if(value == 0) {TCCR0A &= ~_BV(COM0A1);}//disconnet timer0 to PORTB2
+ 8c2:	80 b7       	in	r24, 0x30	; 48
+ 8c4:	41 11       	cpse	r20, r1
+ 8c6:	02 c0       	rjmp	.+4      	; 0x8cc <_ZN8Robogami8writePinEhh+0x2c>
+ 8c8:	8f 77       	andi	r24, 0x7F	; 127
+ 8ca:	01 c0       	rjmp	.+2      	; 0x8ce <_ZN8Robogami8writePinEhh+0x2e>
+			else {TCCR0A |= _BV(COM0A1);}						//connect timer0 to PORTB2
+ 8cc:	80 68       	ori	r24, 0x80	; 128
+ 8ce:	80 bf       	out	0x30, r24	; 48
+			OCR0A = value;													//duty = OCR0A/256
+ 8d0:	46 bf       	out	0x36, r20	; 54
+			break;
+ 8d2:	08 95       	ret
+		case 7://PORTD5
+			if(value == 0) {TCCR0A &= ~_BV(COM0B1);}//disconnect timer0 from PORTD5
+ 8d4:	80 b7       	in	r24, 0x30	; 48
+ 8d6:	41 11       	cpse	r20, r1
+ 8d8:	02 c0       	rjmp	.+4      	; 0x8de <_ZN8Robogami8writePinEhh+0x3e>
+ 8da:	8f 7d       	andi	r24, 0xDF	; 223
+ 8dc:	01 c0       	rjmp	.+2      	; 0x8e0 <_ZN8Robogami8writePinEhh+0x40>
+			else {TCCR0A |= _BV(COM0B1);}						//connect timer0 to PORTD5
+ 8de:	80 62       	ori	r24, 0x20	; 32
+ 8e0:	80 bf       	out	0x30, r24	; 48
+			OCR0B = value;													//duty = OCR0B/256
+ 8e2:	4c bf       	out	0x3c, r20	; 60
+			break;
+ 8e4:	08 95       	ret
+		case 12://PORTB3
+			if(value == 0) {TCCR1A &= ~_BV(COM1A1);}//disconnect timer1 from PORTB3
+ 8e6:	8f b5       	in	r24, 0x2f	; 47
+ 8e8:	41 11       	cpse	r20, r1
+ 8ea:	02 c0       	rjmp	.+4      	; 0x8f0 <_ZN8Robogami8writePinEhh+0x50>
+ 8ec:	8f 77       	andi	r24, 0x7F	; 127
+ 8ee:	01 c0       	rjmp	.+2      	; 0x8f2 <_ZN8Robogami8writePinEhh+0x52>
+			else {TCCR1A |= _BV(COM1A1);}						//connect timer1 to PORTB3
+ 8f0:	80 68       	ori	r24, 0x80	; 128
+ 8f2:	8f bd       	out	0x2f, r24	; 47
+			OCR1A = value;													//duty = OCR1A/256
+ 8f4:	50 e0       	ldi	r21, 0x00	; 0
+ 8f6:	5b bd       	out	0x2b, r21	; 43
+ 8f8:	4a bd       	out	0x2a, r20	; 42
+			break;
+ 8fa:	08 95       	ret
+		case Pins::TORSIONAL_L:										//PWM for torsional SMA is realized by software PWM which frequence is almost 48Hz
+			Duty_Torsional_L = value;								//Duty should be set 0 to 10, if you set duty 5, "real duty value" is 0.5, 50%. 
+			Counter_Torsional_L = 0;								//initialize counter 
+			break;
+		case Pins::TORSIONAL_R:
+			Duty_Torsional_R = value;
+ 8fc:	40 93 91 00 	sts	0x0091, r20	; 0x800091 <Duty_Torsional_R>
+			Counter_Torsional_R = 0;
+ 900:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <Counter_Torsional_R>
+			break;
+ 904:	08 95       	ret
+ 906:	70 e0       	ldi	r23, 0x00	; 0
+		default://for normal pin
+			if (value == 0) {
+				*portOutputRegister(digitalPinToPort(pin)) &= ~digitalPinToBitMask(pin);
+ 908:	fb 01       	movw	r30, r22
+ 90a:	e2 56       	subi	r30, 0x62	; 98
+ 90c:	ff 4f       	sbci	r31, 0xFF	; 255
+		case Pins::TORSIONAL_R:
+			Duty_Torsional_R = value;
+			Counter_Torsional_R = 0;
+			break;
+		default://for normal pin
+			if (value == 0) {
+ 90e:	41 11       	cpse	r20, r1
+ 910:	16 c0       	rjmp	.+44     	; 0x93e <_ZN8Robogami8writePinEhh+0x9e>
+				*portOutputRegister(digitalPinToPort(pin)) &= ~digitalPinToBitMask(pin);
+ 912:	84 91       	lpm	r24, Z
+ 914:	fb 01       	movw	r30, r22
+ 916:	e0 55       	subi	r30, 0x50	; 80
+ 918:	ff 4f       	sbci	r31, 0xFF	; 255
+ 91a:	e4 91       	lpm	r30, Z
+ 91c:	f0 e0       	ldi	r31, 0x00	; 0
+ 91e:	ee 0f       	add	r30, r30
+ 920:	ff 1f       	adc	r31, r31
+ 922:	ee 53       	subi	r30, 0x3E	; 62
+ 924:	ff 4f       	sbci	r31, 0xFF	; 255
+ 926:	a5 91       	lpm	r26, Z+
+ 928:	b4 91       	lpm	r27, Z
+ 92a:	ec 91       	ld	r30, X
+ 92c:	2e 2f       	mov	r18, r30
+ 92e:	30 e0       	ldi	r19, 0x00	; 0
+ 930:	e8 2f       	mov	r30, r24
+ 932:	f0 e0       	ldi	r31, 0x00	; 0
+ 934:	e0 95       	com	r30
+ 936:	f0 95       	com	r31
+ 938:	e2 23       	and	r30, r18
+ 93a:	f3 23       	and	r31, r19
+ 93c:	0e c0       	rjmp	.+28     	; 0x95a <_ZN8Robogami8writePinEhh+0xba>
+			}
+			else {
+				*portOutputRegister(digitalPinToPort(pin)) |= digitalPinToBitMask(pin);
+ 93e:	84 91       	lpm	r24, Z
+ 940:	fb 01       	movw	r30, r22
+ 942:	e0 55       	subi	r30, 0x50	; 80
+ 944:	ff 4f       	sbci	r31, 0xFF	; 255
+ 946:	e4 91       	lpm	r30, Z
+ 948:	f0 e0       	ldi	r31, 0x00	; 0
+ 94a:	ee 0f       	add	r30, r30
+ 94c:	ff 1f       	adc	r31, r31
+ 94e:	ee 53       	subi	r30, 0x3E	; 62
+ 950:	ff 4f       	sbci	r31, 0xFF	; 255
+ 952:	a5 91       	lpm	r26, Z+
+ 954:	b4 91       	lpm	r27, Z
+ 956:	ec 91       	ld	r30, X
+ 958:	e8 2b       	or	r30, r24
+ 95a:	ec 93       	st	X, r30
+ 95c:	08 95       	ret
+
+0000095e <_ZN8Robogami7stopSMAEv>:
+			}
+			break;
+	}
+}
+void Robogami::stopSMA(void) {
+ 95e:	cf 93       	push	r28
+ 960:	df 93       	push	r29
+ 962:	ec 01       	movw	r28, r24
+	writePin(Pins::SPRING_L, 0);
+ 964:	40 e0       	ldi	r20, 0x00	; 0
+ 966:	67 e0       	ldi	r22, 0x07	; 7
+ 968:	9b df       	rcall	.-202    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+	writePin(Pins::SPRING_R, 0);
+ 96a:	40 e0       	ldi	r20, 0x00	; 0
+ 96c:	6c e0       	ldi	r22, 0x0C	; 12
+ 96e:	ce 01       	movw	r24, r28
+ 970:	97 df       	rcall	.-210    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+	writePin(Pins::SPRING_B, 0);
+ 972:	40 e0       	ldi	r20, 0x00	; 0
+ 974:	6b e0       	ldi	r22, 0x0B	; 11
+ 976:	ce 01       	movw	r24, r28
+ 978:	93 df       	rcall	.-218    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+	writePin(Pins::TORSIONAL_L, 0);
+ 97a:	40 e0       	ldi	r20, 0x00	; 0
+ 97c:	68 e0       	ldi	r22, 0x08	; 8
+ 97e:	ce 01       	movw	r24, r28
+ 980:	8f df       	rcall	.-226    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+	writePin(Pins::TORSIONAL_R, 0);
+ 982:	40 e0       	ldi	r20, 0x00	; 0
+ 984:	6a e0       	ldi	r22, 0x0A	; 10
+ 986:	ce 01       	movw	r24, r28
+}
+ 988:	df 91       	pop	r29
+ 98a:	cf 91       	pop	r28
+void Robogami::stopSMA(void) {
+	writePin(Pins::SPRING_L, 0);
+	writePin(Pins::SPRING_R, 0);
+	writePin(Pins::SPRING_B, 0);
+	writePin(Pins::TORSIONAL_L, 0);
+	writePin(Pins::TORSIONAL_R, 0);
+ 98c:	89 cf       	rjmp	.-238    	; 0x8a0 <_ZN8Robogami8writePinEhh>
+
+0000098e <_ZN12SoftwareIrDAC1Eh>:
+//Initialize private member
+//
+//
+//Constructor
+//
+SoftwareIrDA::SoftwareIrDA(uint8_t channel){
+ 98e:	cf 93       	push	r28
+ 990:	df 93       	push	r29
+ 992:	dc 01       	movw	r26, r24
+	#if defined(IR_TXPIN1) && defined(IR_RXPIN1) && defined(IR_RXBIT1) && defined(IR_RXPORT1)
+	if (channel == 1) {
+ 994:	61 30       	cpi	r22, 0x01	; 1
+ 996:	31 f4       	brne	.+12     	; 0x9a4 <_ZN12SoftwareIrDAC1Eh+0x16>
+		_receivePin = IR_RXPIN1;
+ 998:	84 e0       	ldi	r24, 0x04	; 4
+ 99a:	11 96       	adiw	r26, 0x01	; 1
+ 99c:	8c 93       	st	X, r24
+ 99e:	11 97       	sbiw	r26, 0x01	; 1
+		_transmitPin = IR_TXPIN1;
+ 9a0:	83 e0       	ldi	r24, 0x03	; 3
+ 9a2:	05 c0       	rjmp	.+10     	; 0x9ae <_ZN12SoftwareIrDAC1Eh+0x20>
+	}
+	#endif /*IR_RXPIN1 && IR_RXBIT1 && IR_RXPORT1*/
+	#if defined(IR_TXPIN2) && defined(IR_RXPIN2) && defined(IR_RXBIT2) && defined(IR_RXPORT2)
+	else {
+		_receivePin = IR_RXPIN2;
+ 9a4:	85 e0       	ldi	r24, 0x05	; 5
+ 9a6:	11 96       	adiw	r26, 0x01	; 1
+ 9a8:	8c 93       	st	X, r24
+ 9aa:	11 97       	sbiw	r26, 0x01	; 1
+		_transmitPin = IR_TXPIN2;
+ 9ac:	86 e0       	ldi	r24, 0x06	; 6
+ 9ae:	8c 93       	st	X, r24
+	}
+	#endif /*IR_RXPIN2 && IR_RXBIT2 && IR_RXPORT2*/
+
+	*portModeRegister(digitalPinToPort(_transmitPin)) |= digitalPinToBitMask(_transmitPin);
+ 9b0:	2c 91       	ld	r18, X
+ 9b2:	30 e0       	ldi	r19, 0x00	; 0
+ 9b4:	f9 01       	movw	r30, r18
+ 9b6:	e2 56       	subi	r30, 0x62	; 98
+ 9b8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9ba:	84 91       	lpm	r24, Z
+ 9bc:	f9 01       	movw	r30, r18
+ 9be:	e0 55       	subi	r30, 0x50	; 80
+ 9c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9c2:	e4 91       	lpm	r30, Z
+ 9c4:	f0 e0       	ldi	r31, 0x00	; 0
+ 9c6:	ee 0f       	add	r30, r30
+ 9c8:	ff 1f       	adc	r31, r31
+ 9ca:	e4 53       	subi	r30, 0x34	; 52
+ 9cc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9ce:	c5 91       	lpm	r28, Z+
+ 9d0:	d4 91       	lpm	r29, Z
+ 9d2:	e8 81       	ld	r30, Y
+ 9d4:	e8 2b       	or	r30, r24
+ 9d6:	e8 83       	st	Y, r30
+	*portModeRegister(digitalPinToPort(_receivePin)) &= ~digitalPinToBitMask(_receivePin);
+ 9d8:	11 96       	adiw	r26, 0x01	; 1
+ 9da:	8c 91       	ld	r24, X
+ 9dc:	90 e0       	ldi	r25, 0x00	; 0
+ 9de:	fc 01       	movw	r30, r24
+ 9e0:	e2 56       	subi	r30, 0x62	; 98
+ 9e2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9e4:	24 91       	lpm	r18, Z
+ 9e6:	fc 01       	movw	r30, r24
+ 9e8:	e0 55       	subi	r30, 0x50	; 80
+ 9ea:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9ec:	e4 91       	lpm	r30, Z
+ 9ee:	f0 e0       	ldi	r31, 0x00	; 0
+ 9f0:	ee 0f       	add	r30, r30
+ 9f2:	ff 1f       	adc	r31, r31
+ 9f4:	e4 53       	subi	r30, 0x34	; 52
+ 9f6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9f8:	a5 91       	lpm	r26, Z+
+ 9fa:	b4 91       	lpm	r27, Z
+ 9fc:	ec 91       	ld	r30, X
+ 9fe:	8e 2f       	mov	r24, r30
+ a00:	90 e0       	ldi	r25, 0x00	; 0
+ a02:	e2 2f       	mov	r30, r18
+ a04:	f0 e0       	ldi	r31, 0x00	; 0
+ a06:	e0 95       	com	r30
+ a08:	f0 95       	com	r31
+ a0a:	e8 23       	and	r30, r24
+ a0c:	f9 23       	and	r31, r25
+ a0e:	ec 93       	st	X, r30
+}
+ a10:	df 91       	pop	r29
+ a12:	cf 91       	pop	r28
+ a14:	08 95       	ret
+
+00000a16 <_ZN12SoftwareIrDAD1Ev>:
+//
+// Destructor
+//
+SoftwareIrDA::~SoftwareIrDA() {
+ a16:	08 95       	ret
+
+00000a18 <_ZN12SoftwareIrDA12transmitByteEh>:
+void SoftwareIrDA::transmitByte(uint8_t txByte) {
+
+	uint8_t count1;
+	uint8_t count2;
+	uint16_t txByte2 = (uint16_t) txByte;
+	volatile uint8_t *port = portOutputRegister(digitalPinToPort(_transmitPin));
+ a18:	fc 01       	movw	r30, r24
+ a1a:	80 81       	ld	r24, Z
+ a1c:	90 e0       	ldi	r25, 0x00	; 0
+ a1e:	fc 01       	movw	r30, r24
+ a20:	e0 55       	subi	r30, 0x50	; 80
+ a22:	ff 4f       	sbci	r31, 0xFF	; 255
+ a24:	e4 91       	lpm	r30, Z
+ a26:	f0 e0       	ldi	r31, 0x00	; 0
+ a28:	ee 0f       	add	r30, r30
+ a2a:	ff 1f       	adc	r31, r31
+ a2c:	ee 53       	subi	r30, 0x3E	; 62
+ a2e:	ff 4f       	sbci	r31, 0xFF	; 255
+ a30:	a5 91       	lpm	r26, Z+
+ a32:	b4 91       	lpm	r27, Z
+	uint8_t high = *port | digitalPinToBitMask(_transmitPin);
+ a34:	2c 91       	ld	r18, X
+ a36:	fc 01       	movw	r30, r24
+ a38:	e2 56       	subi	r30, 0x62	; 98
+ a3a:	ff 4f       	sbci	r31, 0xFF	; 255
+ a3c:	94 91       	lpm	r25, Z
+	uint8_t low = *port & ~digitalPinToBitMask(_transmitPin);
+ a3e:	8c 91       	ld	r24, X
+ a40:	e4 91       	lpm	r30, Z
+}
+void SoftwareIrDA::transmitByte(uint8_t txByte) {
+
+	uint8_t count1;
+	uint8_t count2;
+	uint16_t txByte2 = (uint16_t) txByte;
+ a42:	70 e0       	ldi	r23, 0x00	; 0
+	volatile uint8_t *port = portOutputRegister(digitalPinToPort(_transmitPin));
+	uint8_t high = *port | digitalPinToBitMask(_transmitPin);
+ a44:	92 2b       	or	r25, r18
+	uint8_t low = *port & ~digitalPinToBitMask(_transmitPin);
+ a46:	e0 95       	com	r30
+ a48:	e8 23       	and	r30, r24
+			  [count1] "r" (count1),
+			  [count2] "r" (count2),
+			  [high] "r" (high),
+			  [low] "r" (low),
+			  [port] "e" (port)
+		);
+ a4a:	26 e0       	ldi	r18, 0x06	; 6
+ a4c:	8b e3       	ldi	r24, 0x3B	; 59
+ a4e:	40 e0       	ldi	r20, 0x00	; 0
+ a50:	30 e0       	ldi	r19, 0x00	; 0
+ a52:	f8 94       	cli
+ a54:	71 e0       	ldi	r23, 0x01	; 1
+ a56:	09 2e       	mov	r0, r25
+
+00000a58 <TxLoop>:
+ a58:	32 2f       	mov	r19, r18
+ a5a:	0c 92       	st	X, r0
+
+00000a5c <PulseDelay>:
+ a5c:	3a 95       	dec	r19
+ a5e:	f1 f7       	brne	.-4      	; 0xa5c <PulseDelay>
+ a60:	ec 93       	st	X, r30
+ a62:	48 2f       	mov	r20, r24
+
+00000a64 <TxDelay>:
+ a64:	4a 95       	dec	r20
+ a66:	f1 f7       	brne	.-4      	; 0xa64 <TxDelay>
+ a68:	09 2e       	mov	r0, r25
+ a6a:	60 fd       	sbrc	r22, 0
+ a6c:	0e 2e       	mov	r0, r30
+ a6e:	76 95       	lsr	r23
+ a70:	67 95       	ror	r22
+ a72:	91 f7       	brne	.-28     	; 0xa58 <TxLoop>
+ a74:	18 95       	reti
+ a76:	08 95       	ret
+
+00000a78 <_ZN12SoftwareIrDA11receiveByteEv>:
+	//no mention about cycle is 1 cycle
+	//Wait Start Bit + WaitFirstBit + 1PrepareRead = 5 + 3*fistDelay-1 + 2 = 0.5*F_CPU/BAUD_RATE
+	//ReadLoop + toPrepareRead + PrepareRead= 5*readDelay-1 + 3 + 2 = F_CPU/BAUD_RATE
+	//WaitStop = 3*READDELYA-1 - 3 + 2 = F_CPU/BAUD_RATE
+	#if defined(IR_RXPIN1) && defined(IR_RXBIT1) && defined(IR_RXPORT1)
+	if (_receivePin == IR_RXPIN1) {
+ a78:	fc 01       	movw	r30, r24
+ a7a:	81 81       	ldd	r24, Z+1	; 0x01
+				: [rxByte] "+r" (rxByte)
+				: [readDelay] "r" ((uint8_t)(IrDAParam::READDELAY+0.5)),
+				  [count1] "r" (count1),
+				  [rxPort] "I" (IR_RXPORT1-0x20),//0x23-0x20
+				  [rxPin] "I" (IR_RXBIT1)
+				);
+ a7c:	90 e0       	ldi	r25, 0x00	; 0
+	//no mention about cycle is 1 cycle
+	//Wait Start Bit + WaitFirstBit + 1PrepareRead = 5 + 3*fistDelay-1 + 2 = 0.5*F_CPU/BAUD_RATE
+	//ReadLoop + toPrepareRead + PrepareRead= 5*readDelay-1 + 3 + 2 = F_CPU/BAUD_RATE
+	//WaitStop = 3*READDELYA-1 - 3 + 2 = F_CPU/BAUD_RATE
+	#if defined(IR_RXPIN1) && defined(IR_RXBIT1) && defined(IR_RXPORT1)
+	if (_receivePin == IR_RXPIN1) {
+ a7e:	84 30       	cpi	r24, 0x04	; 4
+ a80:	79 f4       	brne	.+30     	; 0xaa0 <ReadLoop1+0xe>
+				: [rxByte] "+r" (rxByte)
+				: [readDelay] "r" ((uint8_t)(IrDAParam::READDELAY+0.5)),
+				  [count1] "r" (count1),
+				  [rxPort] "I" (IR_RXPORT1-0x20),//0x23-0x20
+				  [rxPin] "I" (IR_RXBIT1)
+				);
+ a82:	80 e1       	ldi	r24, 0x10	; 16
+ a84:	29 e2       	ldi	r18, 0x29	; 41
+ a86:	98 2f       	mov	r25, r24
+ a88:	80 e8       	ldi	r24, 0x80	; 128
+
+00000a8a <WaitFirstBit1>:
+ a8a:	9a 95       	dec	r25
+ a8c:	f1 f7       	brne	.-4      	; 0xa8a <WaitFirstBit1>
+
+00000a8e <PrepareRead1>:
+ a8e:	92 2f       	mov	r25, r18
+ a90:	08 94       	sec
+
+00000a92 <ReadLoop1>:
+ a92:	82 9b       	sbis	0x10, 2	; 16
+ a94:	88 94       	clc
+ a96:	9a 95       	dec	r25
+ a98:	e1 f7       	brne	.-8      	; 0xa92 <ReadLoop1>
+ a9a:	87 95       	ror	r24
+ a9c:	c0 f7       	brcc	.-16     	; 0xa8e <PrepareRead1>
+ a9e:	08 95       	ret
+				: [rxByte] "+r" (rxByte)
+				: [readDelay] "r" ((uint8_t)(IrDAParam::READDELAY+0.5)),
+				[count1] "r" (count1),
+				[rxPort] "I" (IR_RXPORT2-0x20),
+				[rxPin] "I" (IR_RXBIT2)
+			);
+ aa0:	80 e1       	ldi	r24, 0x10	; 16
+ aa2:	29 e2       	ldi	r18, 0x29	; 41
+ aa4:	98 2f       	mov	r25, r24
+ aa6:	80 e8       	ldi	r24, 0x80	; 128
+
+00000aa8 <WaitFirstBit2>:
+ aa8:	9a 95       	dec	r25
+ aaa:	f1 f7       	brne	.-4      	; 0xaa8 <WaitFirstBit2>
+
+00000aac <PrepareRead2>:
+ aac:	92 2f       	mov	r25, r18
+ aae:	08 94       	sec
+
+00000ab0 <ReadLoop2>:
+ ab0:	83 9b       	sbis	0x10, 3	; 16
+ ab2:	88 94       	clc
+ ab4:	9a 95       	dec	r25
+ ab6:	e1 f7       	brne	.-8      	; 0xab0 <ReadLoop2>
+ ab8:	87 95       	ror	r24
+ aba:	c0 f7       	brcc	.-16     	; 0xaac <PrepareRead2>
+		}
+#endif /*IR_RXPIN2 && IR_RXBIT2 && IR_RXPORT2*/
+	return rxByte;
+ abc:	08 95       	ret
+
+00000abe <_ZN12TinyVCNL40105writeEh>:
+	requestFrom(2);
+
+	distance = (uint16_t) read() << 8;
+	distance |= (uint16_t)read();			
+	return distance;
+}
+ abe:	e0 91 97 00 	lds	r30, 0x0097	; 0x800097 <_ZN12TinyVCNL401010USI_BufIdxE>
+ ac2:	ef 5f       	subi	r30, 0xFF	; 255
+ ac4:	e0 93 97 00 	sts	0x0097, r30	; 0x800097 <_ZN12TinyVCNL401010USI_BufIdxE>
+ ac8:	f0 e0       	ldi	r31, 0x00	; 0
+ aca:	eb 59       	subi	r30, 0x9B	; 155
+ acc:	ff 4f       	sbci	r31, 0xFF	; 255
+ ace:	60 83       	st	Z, r22
+ ad0:	08 95       	ret
+
+00000ad2 <_ZN12TinyVCNL401012transmissionEv>:
+ ad2:	60 91 97 00 	lds	r22, 0x0097	; 0x800097 <_ZN12TinyVCNL401010USI_BufIdxE>
+ ad6:	6f 5f       	subi	r22, 0xFF	; 255
+ ad8:	85 e6       	ldi	r24, 0x65	; 101
+ ada:	90 e0       	ldi	r25, 0x00	; 0
+ adc:	c9 d0       	rcall	.+402    	; 0xc70 <_Z24USI_TWI_Start_Read_WritePhh>
+ ade:	10 92 97 00 	sts	0x0097, r1	; 0x800097 <_ZN12TinyVCNL401010USI_BufIdxE>
+ ae2:	c9 c0       	rjmp	.+402    	; 0xc76 <_Z19USI_TWI_Master_Stopv>
+
+00000ae4 <_ZN12TinyVCNL40105beginEv>:
+ ae4:	cf 93       	push	r28
+ ae6:	df 93       	push	r29
+ ae8:	ec 01       	movw	r28, r24
+ aea:	63 e8       	ldi	r22, 0x83	; 131
+ aec:	e8 df       	rcall	.-48     	; 0xabe <_ZN12TinyVCNL40105writeEh>
+ aee:	64 e1       	ldi	r22, 0x14	; 20
+ af0:	ce 01       	movw	r24, r28
+ af2:	e5 df       	rcall	.-54     	; 0xabe <_ZN12TinyVCNL40105writeEh>
+ af4:	ce 01       	movw	r24, r28
+ af6:	df 91       	pop	r29
+ af8:	cf 91       	pop	r28
+ afa:	eb cf       	rjmp	.-42     	; 0xad2 <_ZN12TinyVCNL401012transmissionEv>
+
+00000afc <_ZN12TinyVCNL401011requestFromEh>:
+ afc:	cf 93       	push	r28
+ afe:	df 93       	push	r29
+ b00:	10 92 96 00 	sts	0x0096, r1	; 0x800096 <_ZN12TinyVCNL401012USI_LastReadE>
+ b04:	60 93 95 00 	sts	0x0095, r22	; 0x800095 <_ZN12TinyVCNL401014USI_BytesAvailE>
+ b08:	c5 e6       	ldi	r28, 0x65	; 101
+ b0a:	d0 e0       	ldi	r29, 0x00	; 0
+ b0c:	88 81       	ld	r24, Y
+ b0e:	81 60       	ori	r24, 0x01	; 1
+ b10:	88 83       	st	Y, r24
+ b12:	6f 5f       	subi	r22, 0xFF	; 255
+ b14:	ce 01       	movw	r24, r28
+ b16:	ac d0       	rcall	.+344    	; 0xc70 <_Z24USI_TWI_Start_Read_WritePhh>
+ b18:	10 92 97 00 	sts	0x0097, r1	; 0x800097 <_ZN12TinyVCNL401010USI_BufIdxE>
+ b1c:	88 81       	ld	r24, Y
+ b1e:	8e 7f       	andi	r24, 0xFE	; 254
+ b20:	88 83       	st	Y, r24
+ b22:	df 91       	pop	r29
+ b24:	cf 91       	pop	r28
+ b26:	a7 c0       	rjmp	.+334    	; 0xc76 <_Z19USI_TWI_Master_Stopv>
+
+00000b28 <_ZN12TinyVCNL40104readEv>:
+ b28:	e0 91 96 00 	lds	r30, 0x0096	; 0x800096 <_ZN12TinyVCNL401012USI_LastReadE>
+ b2c:	ef 5f       	subi	r30, 0xFF	; 255
+ b2e:	e0 93 96 00 	sts	0x0096, r30	; 0x800096 <_ZN12TinyVCNL401012USI_LastReadE>
+ b32:	f0 e0       	ldi	r31, 0x00	; 0
+ b34:	eb 59       	subi	r30, 0x9B	; 155
+ b36:	ff 4f       	sbci	r31, 0xFF	; 255
+ b38:	80 81       	ld	r24, Z
+ b3a:	08 95       	ret
+
+00000b3c <_GLOBAL__sub_I__ZN12TinyVCNL40107USI_BufE>:
+uint8_t TinyVCNL4010::USI_BytesAvail = 0;                // number of bytes requested but not read
+//
+//Constructor
+//
+TinyVCNL4010::TinyVCNL4010() {
+	USI_TWI_Master_Initialise();
+ b3c:	00 c0       	rjmp	.+0      	; 0xb3e <_Z25USI_TWI_Master_Initialisev>
+
+00000b3e <_Z25USI_TWI_Master_Initialisev>:
+/*---------------------------------------------------------------
+ USI TWI single master initialization function
+---------------------------------------------------------------*/
+void USI_TWI_Master_Initialise( void )
+{
+  PORT_USI |= (1<<PIN_USI_SDA);           // Enable pullup on SDA, to set high as released state.
+ b3e:	c5 9a       	sbi	0x18, 5	; 24
+  PORT_USI |= (1<<PIN_USI_SCL);           // Enable pullup on SCL, to set high as released state.
+ b40:	c7 9a       	sbi	0x18, 7	; 24
+  
+  DDR_USI  |= (1<<PIN_USI_SCL);           // Enable SCL as output.
+ b42:	bf 9a       	sbi	0x17, 7	; 23
+  DDR_USI  |= (1<<PIN_USI_SDA);           // Enable SDA as output.
+ b44:	bd 9a       	sbi	0x17, 5	; 23
+  
+  USIDR    =  0xFF;                       // Preload dataregister with "released level" data.
+ b46:	8f ef       	ldi	r24, 0xFF	; 255
+ b48:	8f b9       	out	0x0f, r24	; 15
+  USICR    =  (0<<USISIE)|(0<<USIOIE)|                            // Disable Interrupts.
+              (1<<USIWM1)|(0<<USIWM0)|                            // Set USI in Two-wire mode.
+              (1<<USICS1)|(0<<USICS0)|(1<<USICLK)|                // Software stobe as counter clock source
+              (0<<USITC);
+ b4a:	8a e2       	ldi	r24, 0x2A	; 42
+ b4c:	8d b9       	out	0x0d, r24	; 13
+  USISR   =   (1<<USISIF)|(1<<USIOIF)|(1<<USIPF)|(1<<USIDC)|      // Clear flags,
+              (0x0<<USICNT0);                                     // and reset counter.
+ b4e:	80 ef       	ldi	r24, 0xF0	; 240
+ b50:	8e b9       	out	0x0e, r24	; 14
+ b52:	08 95       	ret
+
+00000b54 <_Z23USI_TWI_Master_Transferh>:
+ Data to be sent has to be placed into the USIDR prior to calling
+ this function. Data read, will be return'ed from the function.
+---------------------------------------------------------------*/
+unsigned char USI_TWI_Master_Transfer( unsigned char temp )
+{
+  USISR = temp;                                     // Set USISR according to temp.
+ b54:	8e b9       	out	0x0e, r24	; 14
+           (1<<USICS1)|(0<<USICS0)|(1<<USICLK)|     // Software clock strobe as source.
+           (1<<USITC);                              // Toggle Clock Port.
+  do
+  { 
+	_delay_us(T2_TWI);
+    USICR = temp;                          // Generate positve SCL edge.
+ b56:	8b e2       	ldi	r24, 0x2B	; 43
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ b58:	9d e0       	ldi	r25, 0x0D	; 13
+ b5a:	9a 95       	dec	r25
+ b5c:	f1 f7       	brne	.-4      	; 0xb5a <_Z23USI_TWI_Master_Transferh+0x6>
+ b5e:	00 00       	nop
+ b60:	8d b9       	out	0x0d, r24	; 13
+    while( !(PIN_USI & (1<<PIN_USI_SCL)) );// Wait for SCL to go high.
+ b62:	b7 9b       	sbis	0x16, 7	; 22
+ b64:	fe cf       	rjmp	.-4      	; 0xb62 <_Z23USI_TWI_Master_Transferh+0xe>
+ b66:	9a e0       	ldi	r25, 0x0A	; 10
+ b68:	9a 95       	dec	r25
+ b6a:	f1 f7       	brne	.-4      	; 0xb68 <_Z23USI_TWI_Master_Transferh+0x14>
+ b6c:	00 c0       	rjmp	.+0      	; 0xb6e <_Z23USI_TWI_Master_Transferh+0x1a>
+	_delay_us(T4_TWI);
+    USICR = temp;                          // Generate negative SCL edge.
+ b6e:	8d b9       	out	0x0d, r24	; 13
+                                                    // Prepare clocking.
+  temp  =  (0<<USISIE)|(0<<USIOIE)|                 // Interrupts disabled
+           (1<<USIWM1)|(0<<USIWM0)|                 // Set USI in Two-wire mode.
+           (1<<USICS1)|(0<<USICS0)|(1<<USICLK)|     // Software clock strobe as source.
+           (1<<USITC);                              // Toggle Clock Port.
+  do
+ b70:	76 9b       	sbis	0x0e, 6	; 14
+ b72:	f2 cf       	rjmp	.-28     	; 0xb58 <_Z23USI_TWI_Master_Transferh+0x4>
+ b74:	8d e0       	ldi	r24, 0x0D	; 13
+ b76:	8a 95       	dec	r24
+ b78:	f1 f7       	brne	.-4      	; 0xb76 <_Z23USI_TWI_Master_Transferh+0x22>
+ b7a:	00 00       	nop
+	_delay_us(T4_TWI);
+    USICR = temp;                          // Generate negative SCL edge.
+  }while( !(USISR & (1<<USIOIF)) );        // Check for transfer complete.
+  
+	_delay_us(T2_TWI);
+  temp  = USIDR;                           // Read out data.
+ b7c:	8f b1       	in	r24, 0x0f	; 15
+  USIDR = 0xFF;                            // Release SDA.
+ b7e:	9f ef       	ldi	r25, 0xFF	; 255
+ b80:	9f b9       	out	0x0f, r25	; 15
+  DDR_USI |= (1<<PIN_USI_SDA);             // Enable SDA as output.
+ b82:	bd 9a       	sbi	0x17, 5	; 23
+
+  return temp;                             // Return the data from the USIDR
+}
+ b84:	08 95       	ret
+
+00000b86 <_Z20USI_TWI_Master_Startv>:
+ Function for generating a TWI Start Condition. 
+---------------------------------------------------------------*/
+unsigned char USI_TWI_Master_Start( void )
+{
+/* Release SCL to ensure that (repeated) Start can be performed */
+  PORT_USI |= (1<<PIN_USI_SCL);                     // Release SCL.
+ b86:	c7 9a       	sbi	0x18, 7	; 24
+  while( !(PORT_USI & (1<<PIN_USI_SCL)) );          // Verify that SCL becomes high.
+ b88:	c7 9b       	sbis	0x18, 7	; 24
+ b8a:	fe cf       	rjmp	.-4      	; 0xb88 <_Z20USI_TWI_Master_Startv+0x2>
+ b8c:	8d e0       	ldi	r24, 0x0D	; 13
+ b8e:	8a 95       	dec	r24
+ b90:	f1 f7       	brne	.-4      	; 0xb8e <_Z20USI_TWI_Master_Startv+0x8>
+ b92:	00 00       	nop
+  _delay_us(T2_TWI);
+
+/* Generate Start Condition */
+  PORT_USI &= ~(1<<PIN_USI_SDA);                    // Force SDA LOW.
+ b94:	c5 98       	cbi	0x18, 5	; 24
+ b96:	8a e0       	ldi	r24, 0x0A	; 10
+ b98:	8a 95       	dec	r24
+ b9a:	f1 f7       	brne	.-4      	; 0xb98 <_Z20USI_TWI_Master_Startv+0x12>
+ b9c:	00 c0       	rjmp	.+0      	; 0xb9e <_Z20USI_TWI_Master_Startv+0x18>
+	_delay_us(T4_TWI);                         
+  PORT_USI &= ~(1<<PIN_USI_SCL);                    // Pull SCL LOW.
+ b9e:	c7 98       	cbi	0x18, 7	; 24
+  PORT_USI |= (1<<PIN_USI_SDA);                     // Release SDA.
+ ba0:	c5 9a       	sbi	0x18, 5	; 24
+
+#ifdef SIGNAL_VERIFY
+  if( !(USISR & (1<<USISIF)) )
+ ba2:	77 99       	sbic	0x0e, 7	; 14
+ ba4:	05 c0       	rjmp	.+10     	; 0xbb0 <_Z20USI_TWI_Master_Startv+0x2a>
+  {
+    USI_TWI_state.errorState = USI_TWI_MISSING_START_CON;  
+ ba6:	83 e0       	ldi	r24, 0x03	; 3
+ ba8:	80 93 98 00 	sts	0x0098, r24	; 0x800098 <USI_TWI_state>
+    return (FALSE);
+ bac:	80 e0       	ldi	r24, 0x00	; 0
+ bae:	08 95       	ret
+  }
+#endif
+  return (TRUE);
+ bb0:	81 e0       	ldi	r24, 0x01	; 1
+}
+ bb2:	08 95       	ret
+
+00000bb4 <_Z35USI_TWI_Start_Transceiver_With_DataPhh>:
+ 
+ Success or error code is returned. Error codes are defined in 
+ USI_TWI_Master.h
+---------------------------------------------------------------*/
+unsigned char USI_TWI_Start_Transceiver_With_Data( unsigned char *msg, unsigned char msgSize)
+{
+ bb4:	af 92       	push	r10
+ bb6:	bf 92       	push	r11
+ bb8:	cf 92       	push	r12
+ bba:	df 92       	push	r13
+ bbc:	ef 92       	push	r14
+ bbe:	ff 92       	push	r15
+ bc0:	0f 93       	push	r16
+ bc2:	1f 93       	push	r17
+ bc4:	cf 93       	push	r28
+ bc6:	df 93       	push	r29
+ bc8:	7c 01       	movw	r14, r24
+ bca:	06 2f       	mov	r16, r22
+	unsigned char savedMsgSize; 
+
+//This clear must be done before calling this function so that memReadMode can be specified.
+//  USI_TWI_state.errorState = 0;				// Clears all mode bits also
+
+  USI_TWI_state.addressMode = TRUE;			// Always true for first byte
+ bcc:	90 91 98 00 	lds	r25, 0x0098	; 0x800098 <USI_TWI_state>
+ bd0:	91 60       	ori	r25, 0x01	; 1
+ bd2:	90 93 98 00 	sts	0x0098, r25	; 0x800098 <USI_TWI_state>
+    USI_TWI_state.errorState = USI_TWI_UE_DATA_COL;
+    return (FALSE);
+  }
+#endif
+
+  if ( !(*msg & (1<<TWI_READ_BIT)) )                // The LSB in the address byte determines if is a masterRead or masterWrite operation.
+ bd6:	f7 01       	movw	r30, r14
+ bd8:	80 81       	ld	r24, Z
+ bda:	80 fd       	sbrc	r24, 0
+ bdc:	03 c0       	rjmp	.+6      	; 0xbe4 <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x30>
+  {
+    USI_TWI_state.masterWriteDataMode = TRUE;
+ bde:	92 60       	ori	r25, 0x02	; 2
+ be0:	90 93 98 00 	sts	0x0098, r25	; 0x800098 <USI_TWI_state>
+//	{
+		savedMsg = msg;
+		savedMsgSize = msgSize;
+//	}
+
+	USI_TWI_Master_Start();
+ be4:	d0 df       	rcall	.-96     	; 0xb86 <_Z20USI_TWI_Master_Startv>
+ be6:	10 2f       	mov	r17, r16
+ be8:	e7 01       	movw	r28, r14
+      *(msg++)  = USI_TWI_Master_Transfer( tempUSISR_8bit );
+
+      /* Prepare to generate ACK (or NACK in case of End Of Transmission) */
+      if( msgSize == 1)                            // If transmission of last byte was performed.
+      {
+        USIDR = 0xFF;                              // Load NACK to confirm End Of Transmission.
+ bea:	bb 24       	eor	r11, r11
+ bec:	ba 94       	dec	r11
+	  if ((!USI_TWI_state.addressMode) && USI_TWI_state.memReadMode)// means memory start address has been written
+	  {
+		msg = savedMsg;					// start at slave address again
+		*(msg) |= (TRUE<<TWI_READ_BIT);  // set the Read Bit on Slave address
+		USI_TWI_state.errorState = 0;
+		USI_TWI_state.addressMode = TRUE;	// Now set up for the Read cycle
+ bee:	aa 24       	eor	r10, r10
+ bf0:	a3 94       	inc	r10
+
+/*Write address and Read/Write data */
+  do
+  {
+    /* If masterWrite cycle (or inital address tranmission)*/
+    if (USI_TWI_state.addressMode || USI_TWI_state.masterWriteDataMode)
+ bf2:	80 91 98 00 	lds	r24, 0x0098	; 0x800098 <USI_TWI_state>
+ bf6:	83 70       	andi	r24, 0x03	; 3
+ bf8:	9e 01       	movw	r18, r28
+ bfa:	2f 5f       	subi	r18, 0xFF	; 255
+ bfc:	3f 4f       	sbci	r19, 0xFF	; 255
+ bfe:	69 01       	movw	r12, r18
+ c00:	88 23       	and	r24, r24
+ c02:	e1 f0       	breq	.+56     	; 0xc3c <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x88>
+    {
+      /* Write a byte */
+      PORT_USI &= ~(1<<PIN_USI_SCL);                // Pull SCL LOW.
+ c04:	c7 98       	cbi	0x18, 7	; 24
+      USIDR     = *(msg++);                        // Setup data.
+ c06:	88 81       	ld	r24, Y
+ c08:	8f b9       	out	0x0f, r24	; 15
+      USI_TWI_Master_Transfer( tempUSISR_8bit );    // Send 8 bits on bus.
+ c0a:	80 ef       	ldi	r24, 0xF0	; 240
+ c0c:	a3 df       	rcall	.-186    	; 0xb54 <_Z23USI_TWI_Master_Transferh>
+      
+      /* Clock and verify (N)ACK from slave */
+      DDR_USI  &= ~(1<<PIN_USI_SDA);                // Enable SDA as input.
+ c0e:	bd 98       	cbi	0x17, 5	; 23
+      if( USI_TWI_Master_Transfer( tempUSISR_1bit ) & (1<<TWI_NACK_BIT) ) 
+ c10:	8e ef       	ldi	r24, 0xFE	; 254
+ c12:	a0 df       	rcall	.-192    	; 0xb54 <_Z23USI_TWI_Master_Transferh>
+        else
+          USI_TWI_state.errorState = USI_TWI_NO_ACK_ON_DATA;
+        return (FALSE);*/
+      }
+	  
+	  if ((!USI_TWI_state.addressMode) && USI_TWI_state.memReadMode)// means memory start address has been written
+ c14:	80 91 98 00 	lds	r24, 0x0098	; 0x800098 <USI_TWI_state>
+ c18:	98 2f       	mov	r25, r24
+ c1a:	95 70       	andi	r25, 0x05	; 5
+ c1c:	94 30       	cpi	r25, 0x04	; 4
+ c1e:	51 f4       	brne	.+20     	; 0xc34 <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x80>
+	  {
+		msg = savedMsg;					// start at slave address again
+		*(msg) |= (TRUE<<TWI_READ_BIT);  // set the Read Bit on Slave address
+ c20:	f7 01       	movw	r30, r14
+ c22:	80 81       	ld	r24, Z
+ c24:	81 60       	ori	r24, 0x01	; 1
+ c26:	80 83       	st	Z, r24
+		USI_TWI_state.errorState = 0;
+		USI_TWI_state.addressMode = TRUE;	// Now set up for the Read cycle
+ c28:	a0 92 98 00 	sts	0x0098, r10	; 0x800098 <USI_TWI_state>
+		msgSize = savedMsgSize;				// Set byte count correctly
+		// NOte that the length should be Slave adrs byte + # bytes to read + 1 (gets decremented below)
+		USI_TWI_Master_Start();
+ c2c:	ac df       	rcall	.-168    	; 0xb86 <_Z20USI_TWI_Master_Startv>
+	  {
+		msg = savedMsg;					// start at slave address again
+		*(msg) |= (TRUE<<TWI_READ_BIT);  // set the Read Bit on Slave address
+		USI_TWI_state.errorState = 0;
+		USI_TWI_state.addressMode = TRUE;	// Now set up for the Read cycle
+		msgSize = savedMsgSize;				// Set byte count correctly
+ c2e:	10 2f       	mov	r17, r16
+        return (FALSE);*/
+      }
+	  
+	  if ((!USI_TWI_state.addressMode) && USI_TWI_state.memReadMode)// means memory start address has been written
+	  {
+		msg = savedMsg;					// start at slave address again
+ c30:	e7 01       	movw	r28, r14
+ c32:	10 c0       	rjmp	.+32     	; 0xc54 <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0xa0>
+		// NOte that the length should be Slave adrs byte + # bytes to read + 1 (gets decremented below)
+		USI_TWI_Master_Start();
+	  }
+	  else
+	  {
+		USI_TWI_state.addressMode = FALSE;            // Only perform address transmission once.
+ c34:	8e 7f       	andi	r24, 0xFE	; 254
+ c36:	80 93 98 00 	sts	0x0098, r24	; 0x800098 <USI_TWI_state>
+ c3a:	0b c0       	rjmp	.+22     	; 0xc52 <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x9e>
+    }
+    /* Else masterRead cycle*/
+    else
+    {
+      /* Read a data byte */
+      DDR_USI   &= ~(1<<PIN_USI_SDA);               // Enable SDA as input.
+ c3c:	bd 98       	cbi	0x17, 5	; 23
+      *(msg++)  = USI_TWI_Master_Transfer( tempUSISR_8bit );
+ c3e:	80 ef       	ldi	r24, 0xF0	; 240
+ c40:	89 df       	rcall	.-238    	; 0xb54 <_Z23USI_TWI_Master_Transferh>
+ c42:	88 83       	st	Y, r24
+
+      /* Prepare to generate ACK (or NACK in case of End Of Transmission) */
+      if( msgSize == 1)                            // If transmission of last byte was performed.
+ c44:	11 30       	cpi	r17, 0x01	; 1
+ c46:	11 f4       	brne	.+4      	; 0xc4c <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x98>
+      {
+        USIDR = 0xFF;                              // Load NACK to confirm End Of Transmission.
+ c48:	bf b8       	out	0x0f, r11	; 15
+ c4a:	01 c0       	rjmp	.+2      	; 0xc4e <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x9a>
+      }
+      else
+      {
+        USIDR = 0x00;                              // Load ACK. Set data register bit 7 (output for SDA) low.
+ c4c:	1f b8       	out	0x0f, r1	; 15
+      }
+      USI_TWI_Master_Transfer( tempUSISR_1bit );   // Generate ACK/NACK.
+ c4e:	8e ef       	ldi	r24, 0xFE	; 254
+ c50:	81 df       	rcall	.-254    	; 0xb54 <_Z23USI_TWI_Master_Transferh>
+    /* Else masterRead cycle*/
+    else
+    {
+      /* Read a data byte */
+      DDR_USI   &= ~(1<<PIN_USI_SDA);               // Enable SDA as input.
+      *(msg++)  = USI_TWI_Master_Transfer( tempUSISR_8bit );
+ c52:	e6 01       	movw	r28, r12
+//	}
+
+	USI_TWI_Master_Start();
+
+/*Write address and Read/Write data */
+  do
+ c54:	11 50       	subi	r17, 0x01	; 1
+ c56:	69 f6       	brne	.-102    	; 0xbf2 <_Z35USI_TWI_Start_Transceiver_With_DataPhh+0x3e>
+
+  // usually a stop condition is sent here, but TinyWireM needs to choose whether or not to send it
+
+/* Transmission successfully completed*/
+  return (TRUE);
+}
+ c58:	81 e0       	ldi	r24, 0x01	; 1
+ c5a:	df 91       	pop	r29
+ c5c:	cf 91       	pop	r28
+ c5e:	1f 91       	pop	r17
+ c60:	0f 91       	pop	r16
+ c62:	ff 90       	pop	r15
+ c64:	ef 90       	pop	r14
+ c66:	df 90       	pop	r13
+ c68:	cf 90       	pop	r12
+ c6a:	bf 90       	pop	r11
+ c6c:	af 90       	pop	r10
+ c6e:	08 95       	ret
+
+00000c70 <_Z24USI_TWI_Start_Read_WritePhh>:
+ USI_TWI_Master.h
+---------------------------------------------------------------*/
+unsigned char USI_TWI_Start_Read_Write( unsigned char *msg, unsigned char msgSize)
+{
+    
+	USI_TWI_state.errorState = 0;				// Clears all mode bits also
+ c70:	10 92 98 00 	sts	0x0098, r1	; 0x800098 <USI_TWI_state>
+  
+	return (USI_TWI_Start_Transceiver_With_Data( msg, msgSize));
+ c74:	9f cf       	rjmp	.-194    	; 0xbb4 <_Z35USI_TWI_Start_Transceiver_With_DataPhh>
+
+00000c76 <_Z19USI_TWI_Master_Stopv>:
+ Function for generating a TWI Stop Condition. Used to release 
+ the TWI bus.
+---------------------------------------------------------------*/
+unsigned char USI_TWI_Master_Stop( void )
+{
+  PORT_USI &= ~(1<<PIN_USI_SDA);           // Pull SDA low.
+ c76:	c5 98       	cbi	0x18, 5	; 24
+  PORT_USI |= (1<<PIN_USI_SCL);            // Release SCL.
+ c78:	c7 9a       	sbi	0x18, 7	; 24
+  while( !(PIN_USI & (1<<PIN_USI_SCL)) );  // Wait for SCL to go high.  
+ c7a:	b7 9b       	sbis	0x16, 7	; 22
+ c7c:	fe cf       	rjmp	.-4      	; 0xc7a <_Z19USI_TWI_Master_Stopv+0x4>
+ c7e:	8a e0       	ldi	r24, 0x0A	; 10
+ c80:	8a 95       	dec	r24
+ c82:	f1 f7       	brne	.-4      	; 0xc80 <_Z19USI_TWI_Master_Stopv+0xa>
+ c84:	00 c0       	rjmp	.+0      	; 0xc86 <_Z19USI_TWI_Master_Stopv+0x10>
+	_delay_us(T4_TWI);
+  PORT_USI |= (1<<PIN_USI_SDA);            // Release SDA.
+ c86:	c5 9a       	sbi	0x18, 5	; 24
+ c88:	8d e0       	ldi	r24, 0x0D	; 13
+ c8a:	8a 95       	dec	r24
+ c8c:	f1 f7       	brne	.-4      	; 0xc8a <_Z19USI_TWI_Master_Stopv+0x14>
+ c8e:	00 00       	nop
+	_delay_us(T2_TWI);
+  
+#ifdef SIGNAL_VERIFY
+  if( !(USISR & (1<<USIPF)) )
+ c90:	9e b1       	in	r25, 0x0e	; 14
+ c92:	89 2f       	mov	r24, r25
+ c94:	80 72       	andi	r24, 0x20	; 32
+ c96:	95 fd       	sbrc	r25, 5
+ c98:	04 c0       	rjmp	.+8      	; 0xca2 <_Z19USI_TWI_Master_Stopv+0x2c>
+  {
+    USI_TWI_state.errorState = USI_TWI_MISSING_STOP_CON;    
+ c9a:	94 e0       	ldi	r25, 0x04	; 4
+ c9c:	90 93 98 00 	sts	0x0098, r25	; 0x800098 <USI_TWI_state>
+    return (FALSE);
+ ca0:	08 95       	ret
+  }
+#endif
+
+  return (TRUE);
+ ca2:	81 e0       	ldi	r24, 0x01	; 1
+ ca4:	08 95       	ret
+
+00000ca6 <__vector_6>:
+		else {
+			irPortBack.transmitByte(infrared[i]);
+		}
+		i++;
+	} while( infrared[i-1] != Infrareds::EOM );
+	loadGIMSK();
+ ca6:	1f 92       	push	r1
+ ca8:	0f 92       	push	r0
+ caa:	0f b6       	in	r0, 0x3f	; 63
+ cac:	0f 92       	push	r0
+ cae:	11 24       	eor	r1, r1
+ cb0:	8f 93       	push	r24
+ cb2:	9f 93       	push	r25
+ cb4:	af 93       	push	r26
+ cb6:	bf 93       	push	r27
+ cb8:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <timer0_millis>
+ cbc:	90 91 c3 00 	lds	r25, 0x00C3	; 0x8000c3 <timer0_millis+0x1>
+ cc0:	a0 91 c4 00 	lds	r26, 0x00C4	; 0x8000c4 <timer0_millis+0x2>
+ cc4:	b0 91 c5 00 	lds	r27, 0x00C5	; 0x8000c5 <timer0_millis+0x3>
+ cc8:	02 96       	adiw	r24, 0x02	; 2
+ cca:	a1 1d       	adc	r26, r1
+ ccc:	b1 1d       	adc	r27, r1
+ cce:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <timer0_millis>
+ cd2:	90 93 c3 00 	sts	0x00C3, r25	; 0x8000c3 <timer0_millis+0x1>
+ cd6:	a0 93 c4 00 	sts	0x00C4, r26	; 0x8000c4 <timer0_millis+0x2>
+ cda:	b0 93 c5 00 	sts	0x00C5, r27	; 0x8000c5 <timer0_millis+0x3>
+ cde:	90 91 92 00 	lds	r25, 0x0092	; 0x800092 <Counter_Torsional_L>
+ ce2:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <Duty_Torsional_L>
+ ce6:	98 13       	cpse	r25, r24
+ ce8:	02 c0       	rjmp	.+4      	; 0xcee <__vector_6+0x48>
+ cea:	96 98       	cbi	0x12, 6	; 18
+ cec:	05 c0       	rjmp	.+10     	; 0xcf8 <__vector_6+0x52>
+ cee:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <Counter_Torsional_L>
+ cf2:	81 11       	cpse	r24, r1
+ cf4:	01 c0       	rjmp	.+2      	; 0xcf8 <__vector_6+0x52>
+ cf6:	96 9a       	sbi	0x12, 6	; 18
+ cf8:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <Counter_Torsional_L>
+ cfc:	8f 5f       	subi	r24, 0xFF	; 255
+ cfe:	80 93 92 00 	sts	0x0092, r24	; 0x800092 <Counter_Torsional_L>
+ d02:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <Counter_Torsional_L>
+ d06:	8a 30       	cpi	r24, 0x0A	; 10
+ d08:	11 f4       	brne	.+4      	; 0xd0e <__vector_6+0x68>
+ d0a:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <Counter_Torsional_L>
+ d0e:	90 91 90 00 	lds	r25, 0x0090	; 0x800090 <Counter_Torsional_R>
+ d12:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <Duty_Torsional_R>
+ d16:	98 13       	cpse	r25, r24
+ d18:	02 c0       	rjmp	.+4      	; 0xd1e <__vector_6+0x78>
+ d1a:	c1 98       	cbi	0x18, 1	; 24
+ d1c:	05 c0       	rjmp	.+10     	; 0xd28 <__vector_6+0x82>
+ d1e:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <Counter_Torsional_R>
+ d22:	81 11       	cpse	r24, r1
+ d24:	01 c0       	rjmp	.+2      	; 0xd28 <__vector_6+0x82>
+ d26:	c1 9a       	sbi	0x18, 1	; 24
+ d28:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <Counter_Torsional_R>
+ d2c:	8f 5f       	subi	r24, 0xFF	; 255
+ d2e:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <Counter_Torsional_R>
+ d32:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <Counter_Torsional_R>
+ d36:	8a 30       	cpi	r24, 0x0A	; 10
+ d38:	11 f4       	brne	.+4      	; 0xd3e <__vector_6+0x98>
+ d3a:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <Counter_Torsional_R>
+ d3e:	bf 91       	pop	r27
+ d40:	af 91       	pop	r26
+ d42:	9f 91       	pop	r25
+ d44:	8f 91       	pop	r24
+ d46:	0f 90       	pop	r0
+ d48:	0f be       	out	0x3f, r0	; 63
+ d4a:	0f 90       	pop	r0
+ d4c:	1f 90       	pop	r1
+ d4e:	18 95       	reti
+
+00000d50 <_Z6millisv>:
+ d50:	2f b7       	in	r18, 0x3f	; 63
+ d52:	f8 94       	cli
+ d54:	60 91 c2 00 	lds	r22, 0x00C2	; 0x8000c2 <timer0_millis>
+ d58:	70 91 c3 00 	lds	r23, 0x00C3	; 0x8000c3 <timer0_millis+0x1>
+ d5c:	80 91 c4 00 	lds	r24, 0x00C4	; 0x8000c4 <timer0_millis+0x2>
+ d60:	90 91 c5 00 	lds	r25, 0x00C5	; 0x8000c5 <timer0_millis+0x3>
+ d64:	2f bf       	out	0x3f, r18	; 63
+ d66:	08 95       	ret
+
+00000d68 <_Z11rxAvailablev>:
+ d68:	82 2d       	mov	r24, r2
+ d6a:	83 19       	sub	r24, r3
+ d6c:	08 95       	ret
+
+00000d6e <_Z6rxReadv>:
+ d6e:	e3 2d       	mov	r30, r3
+ d70:	81 e0       	ldi	r24, 0x01	; 1
+ d72:	83 0d       	add	r24, r3
+ d74:	38 2e       	mov	r3, r24
+ d76:	f0 e0       	ldi	r31, 0x00	; 0
+ d78:	ed 55       	subi	r30, 0x5D	; 93
+ d7a:	ff 4f       	sbci	r31, 0xFF	; 255
+ d7c:	80 81       	ld	r24, Z
+ d7e:	08 95       	ret
+
+00000d80 <_Z16initializeRxIdxsv>:
+ d80:	21 2c       	mov	r2, r1
+ d82:	31 2c       	mov	r3, r1
+ d84:	08 95       	ret
+
+00000d86 <_Z12isEmptyRxBufv>:
+ d86:	81 e0       	ldi	r24, 0x01	; 1
+ d88:	32 14       	cp	r3, r2
+ d8a:	08 f4       	brcc	.+2      	; 0xd8e <_Z12isEmptyRxBufv+0x8>
+ d8c:	80 e0       	ldi	r24, 0x00	; 0
+ d8e:	08 95       	ret
+
+00000d90 <_Z9clearGIFRv>:
+ d90:	0a b6       	in	r0, 0x3a	; 58
+ d92:	06 fe       	sbrs	r0, 6
+ d94:	03 c0       	rjmp	.+6      	; 0xd9c <_Z9clearGIFRv+0xc>
+ d96:	8a b7       	in	r24, 0x3a	; 58
+ d98:	80 64       	ori	r24, 0x40	; 64
+ d9a:	8a bf       	out	0x3a, r24	; 58
+ d9c:	0a b6       	in	r0, 0x3a	; 58
+ d9e:	07 fe       	sbrs	r0, 7
+ da0:	03 c0       	rjmp	.+6      	; 0xda8 <_Z9clearGIFRv+0x18>
+ da2:	8a b7       	in	r24, 0x3a	; 58
+ da4:	80 68       	ori	r24, 0x80	; 128
+ da6:	8a bf       	out	0x3a, r24	; 58
+ da8:	08 95       	ret
+
+00000daa <__vector_1>:
+ daa:	1f 92       	push	r1
+ dac:	0f 92       	push	r0
+ dae:	0f b6       	in	r0, 0x3f	; 63
+ db0:	0f 92       	push	r0
+ db2:	11 24       	eor	r1, r1
+ db4:	2f 93       	push	r18
+ db6:	3f 93       	push	r19
+ db8:	4f 93       	push	r20
+ dba:	5f 93       	push	r21
+ dbc:	6f 93       	push	r22
+ dbe:	7f 93       	push	r23
+ dc0:	8f 93       	push	r24
+ dc2:	9f 93       	push	r25
+ dc4:	af 93       	push	r26
+ dc6:	bf 93       	push	r27
+ dc8:	cf 93       	push	r28
+ dca:	df 93       	push	r29
+ dcc:	ef 93       	push	r30
+ dce:	ff 93       	push	r31
+ dd0:	c2 2d       	mov	r28, r2
+ dd2:	81 e0       	ldi	r24, 0x01	; 1
+ dd4:	82 0d       	add	r24, r2
+ dd6:	28 2e       	mov	r2, r24
+ dd8:	d0 e0       	ldi	r29, 0x00	; 0
+ dda:	8e e9       	ldi	r24, 0x9E	; 158
+ ddc:	90 e0       	ldi	r25, 0x00	; 0
+ dde:	4c de       	rcall	.-872    	; 0xa78 <_ZN12SoftwareIrDA11receiveByteEv>
+ de0:	cd 55       	subi	r28, 0x5D	; 93
+ de2:	df 4f       	sbci	r29, 0xFF	; 255
+ de4:	88 83       	st	Y, r24
+ de6:	8c e1       	ldi	r24, 0x1C	; 28
+ de8:	82 15       	cp	r24, r2
+ dea:	08 f4       	brcc	.+2      	; 0xdee <__vector_1+0x44>
+ dec:	cc df       	rcall	.-104    	; 0xd86 <_Z12isEmptyRxBufv>
+ dee:	d0 df       	rcall	.-96     	; 0xd90 <_Z9clearGIFRv>
+ df0:	ff 91       	pop	r31
+ df2:	ef 91       	pop	r30
+ df4:	df 91       	pop	r29
+ df6:	cf 91       	pop	r28
+ df8:	bf 91       	pop	r27
+ dfa:	af 91       	pop	r26
+ dfc:	9f 91       	pop	r25
+ dfe:	8f 91       	pop	r24
+ e00:	7f 91       	pop	r23
+ e02:	6f 91       	pop	r22
+ e04:	5f 91       	pop	r21
+ e06:	4f 91       	pop	r20
+ e08:	3f 91       	pop	r19
+ e0a:	2f 91       	pop	r18
+ e0c:	0f 90       	pop	r0
+ e0e:	0f be       	out	0x3f, r0	; 63
+ e10:	0f 90       	pop	r0
+ e12:	1f 90       	pop	r1
+ e14:	18 95       	reti
+
+00000e16 <__vector_2>:
+ e16:	1f 92       	push	r1
+ e18:	0f 92       	push	r0
+ e1a:	0f b6       	in	r0, 0x3f	; 63
+ e1c:	0f 92       	push	r0
+ e1e:	11 24       	eor	r1, r1
+ e20:	2f 93       	push	r18
+ e22:	3f 93       	push	r19
+ e24:	4f 93       	push	r20
+ e26:	5f 93       	push	r21
+ e28:	6f 93       	push	r22
+ e2a:	7f 93       	push	r23
+ e2c:	8f 93       	push	r24
+ e2e:	9f 93       	push	r25
+ e30:	af 93       	push	r26
+ e32:	bf 93       	push	r27
+ e34:	cf 93       	push	r28
+ e36:	df 93       	push	r29
+ e38:	ef 93       	push	r30
+ e3a:	ff 93       	push	r31
+ e3c:	c2 2d       	mov	r28, r2
+ e3e:	81 e0       	ldi	r24, 0x01	; 1
+ e40:	82 0d       	add	r24, r2
+ e42:	28 2e       	mov	r2, r24
+ e44:	d0 e0       	ldi	r29, 0x00	; 0
+ e46:	89 e9       	ldi	r24, 0x99	; 153
+ e48:	90 e0       	ldi	r25, 0x00	; 0
+ e4a:	16 de       	rcall	.-980    	; 0xa78 <_ZN12SoftwareIrDA11receiveByteEv>
+ e4c:	cd 55       	subi	r28, 0x5D	; 93
+ e4e:	df 4f       	sbci	r29, 0xFF	; 255
+ e50:	88 83       	st	Y, r24
+ e52:	8c e1       	ldi	r24, 0x1C	; 28
+ e54:	82 15       	cp	r24, r2
+ e56:	08 f4       	brcc	.+2      	; 0xe5a <__vector_2+0x44>
+ e58:	96 df       	rcall	.-212    	; 0xd86 <_Z12isEmptyRxBufv>
+ e5a:	9a df       	rcall	.-204    	; 0xd90 <_Z9clearGIFRv>
+ e5c:	ff 91       	pop	r31
+ e5e:	ef 91       	pop	r30
+ e60:	df 91       	pop	r29
+ e62:	cf 91       	pop	r28
+ e64:	bf 91       	pop	r27
+ e66:	af 91       	pop	r26
+ e68:	9f 91       	pop	r25
+ e6a:	8f 91       	pop	r24
+ e6c:	7f 91       	pop	r23
+ e6e:	6f 91       	pop	r22
+ e70:	5f 91       	pop	r21
+ e72:	4f 91       	pop	r20
+ e74:	3f 91       	pop	r19
+ e76:	2f 91       	pop	r18
+ e78:	0f 90       	pop	r0
+ e7a:	0f be       	out	0x3f, r0	; 63
+ e7c:	0f 90       	pop	r0
+ e7e:	1f 90       	pop	r1
+ e80:	18 95       	reti
+
+00000e82 <_Z9saveGIMSKv>:
+ e82:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <Saved_GIMSK>
+ e86:	87 30       	cpi	r24, 0x07	; 7
+ e88:	59 f4       	brne	.+22     	; 0xea0 <_Z9saveGIMSKv+0x1e>
+ e8a:	8b b7       	in	r24, 0x3b	; 59
+ e8c:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <Saved_GIMSK>
+ e90:	8b b7       	in	r24, 0x3b	; 59
+ e92:	8f 73       	andi	r24, 0x3F	; 63
+ e94:	8b bf       	out	0x3b, r24	; 59
+ e96:	40 e0       	ldi	r20, 0x00	; 0
+ e98:	61 e0       	ldi	r22, 0x01	; 1
+ e9a:	8e e8       	ldi	r24, 0x8E	; 142
+ e9c:	90 e0       	ldi	r25, 0x00	; 0
+ e9e:	00 cd       	rjmp	.-1536   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+ ea0:	80 91 c1 00 	lds	r24, 0x00C1	; 0x8000c1 <Counter_Overlap_SavingGIMSK>
+ ea4:	8f 5f       	subi	r24, 0xFF	; 255
+ ea6:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <Counter_Overlap_SavingGIMSK>
+ eaa:	08 95       	ret
+
+00000eac <_Z9loadGIMSKv>:
+ eac:	80 91 c1 00 	lds	r24, 0x00C1	; 0x8000c1 <Counter_Overlap_SavingGIMSK>
+ eb0:	88 23       	and	r24, r24
+ eb2:	21 f0       	breq	.+8      	; 0xebc <_Z9loadGIMSKv+0x10>
+ eb4:	81 50       	subi	r24, 0x01	; 1
+ eb6:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <Counter_Overlap_SavingGIMSK>
+ eba:	08 95       	ret
+ ebc:	69 df       	rcall	.-302    	; 0xd90 <_Z9clearGIFRv>
+ ebe:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <Saved_GIMSK>
+ ec2:	8b bf       	out	0x3b, r24	; 59
+ ec4:	87 e0       	ldi	r24, 0x07	; 7
+ ec6:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <Saved_GIMSK>
+ eca:	41 e0       	ldi	r20, 0x01	; 1
+ ecc:	61 e0       	ldi	r22, 0x01	; 1
+ ece:	8e e8       	ldi	r24, 0x8E	; 142
+ ed0:	90 e0       	ldi	r25, 0x00	; 0
+ ed2:	e6 cc       	rjmp	.-1588   	; 0x8a0 <_ZN8Robogami8writePinEhh>
+
+00000ed4 <_Z12sendInfraredPh>:
+}
+void sendInfrared(uint8_t infrared[]) {
+ ed4:	1f 93       	push	r17
+ ed6:	cf 93       	push	r28
+ ed8:	df 93       	push	r29
+ eda:	ec 01       	movw	r28, r24
+	uint8_t i = 0;
+	saveGIMSK();
+ edc:	d2 df       	rcall	.-92     	; 0xe82 <_Z9saveGIMSKv>
+		i++;
+	} while( infrared[i-1] != Infrareds::EOM );
+	loadGIMSK();
+}
+void sendInfrared(uint8_t infrared[]) {
+	uint8_t i = 0;
+ ede:	80 e0       	ldi	r24, 0x00	; 0
+ ee0:	e7 ec       	ldi	r30, 0xC7	; 199
+ ee2:	f0 e0       	ldi	r31, 0x00	; 0
+ ee4:	31 97       	sbiw	r30, 0x01	; 1
+ ee6:	f1 f7       	brne	.-4      	; 0xee4 <_Z12sendInfraredPh+0x10>
+ ee8:	00 c0       	rjmp	.+0      	; 0xeea <_Z12sendInfraredPh+0x16>
+ eea:	00 00       	nop
+	saveGIMSK();
+	do {
+		_delay_us(100);
+		irPortFore.transmitByte(infrared[i++]);
+ eec:	11 e0       	ldi	r17, 0x01	; 1
+ eee:	18 0f       	add	r17, r24
+ ef0:	fe 01       	movw	r30, r28
+ ef2:	e8 0f       	add	r30, r24
+ ef4:	f1 1d       	adc	r31, r1
+ ef6:	60 81       	ld	r22, Z
+ ef8:	8e e9       	ldi	r24, 0x9E	; 158
+ efa:	90 e0       	ldi	r25, 0x00	; 0
+ efc:	8d dd       	rcall	.-1254   	; 0xa18 <_ZN12SoftwareIrDA12transmitByteEh>
+ efe:	81 2f       	mov	r24, r17
+	} while( infrared[i-1] != Infrareds::EOM );
+ f00:	fe 01       	movw	r30, r28
+ f02:	e1 0f       	add	r30, r17
+ f04:	f1 1d       	adc	r31, r1
+ f06:	31 97       	sbiw	r30, 0x01	; 1
+	loadGIMSK();
+}
+void sendInfrared(uint8_t infrared[]) {
+	uint8_t i = 0;
+	saveGIMSK();
+	do {
+ f08:	90 81       	ld	r25, Z
+ f0a:	91 3c       	cpi	r25, 0xC1	; 193
+ f0c:	49 f7       	brne	.-46     	; 0xee0 <_Z12sendInfraredPh+0xc>
+ f0e:	80 e0       	ldi	r24, 0x00	; 0
+ f10:	e7 ec       	ldi	r30, 0xC7	; 199
+ f12:	f0 e0       	ldi	r31, 0x00	; 0
+ f14:	31 97       	sbiw	r30, 0x01	; 1
+ f16:	f1 f7       	brne	.-4      	; 0xf14 <_Z12sendInfraredPh+0x40>
+ f18:	00 c0       	rjmp	.+0      	; 0xf1a <_Z12sendInfraredPh+0x46>
+ f1a:	00 00       	nop
+		irPortFore.transmitByte(infrared[i++]);
+	} while( infrared[i-1] != Infrareds::EOM );
+	i = 0;
+	do {
+		_delay_us(100);
+		irPortBack.transmitByte(infrared[i++]);
+ f1c:	11 e0       	ldi	r17, 0x01	; 1
+ f1e:	18 0f       	add	r17, r24
+ f20:	fe 01       	movw	r30, r28
+ f22:	e8 0f       	add	r30, r24
+ f24:	f1 1d       	adc	r31, r1
+ f26:	60 81       	ld	r22, Z
+ f28:	89 e9       	ldi	r24, 0x99	; 153
+ f2a:	90 e0       	ldi	r25, 0x00	; 0
+ f2c:	75 dd       	rcall	.-1302   	; 0xa18 <_ZN12SoftwareIrDA12transmitByteEh>
+ f2e:	81 2f       	mov	r24, r17
+	} while( infrared[i-1] != Infrareds::EOM );
+ f30:	fe 01       	movw	r30, r28
+ f32:	e1 0f       	add	r30, r17
+ f34:	f1 1d       	adc	r31, r1
+ f36:	31 97       	sbiw	r30, 0x01	; 1
+	do {
+		_delay_us(100);
+		irPortFore.transmitByte(infrared[i++]);
+	} while( infrared[i-1] != Infrareds::EOM );
+	i = 0;
+	do {
+ f38:	90 81       	ld	r25, Z
+ f3a:	91 3c       	cpi	r25, 0xC1	; 193
+ f3c:	49 f7       	brne	.-46     	; 0xf10 <_Z12sendInfraredPh+0x3c>
+		_delay_us(100);
+		irPortBack.transmitByte(infrared[i++]);
+	} while( infrared[i-1] != Infrareds::EOM );
+	loadGIMSK();
+}
+ f3e:	df 91       	pop	r29
+ f40:	cf 91       	pop	r28
+ f42:	1f 91       	pop	r17
+	i = 0;
+	do {
+		_delay_us(100);
+		irPortBack.transmitByte(infrared[i++]);
+	} while( infrared[i-1] != Infrareds::EOM );
+	loadGIMSK();
+ f44:	b3 cf       	rjmp	.-154    	; 0xeac <_Z9loadGIMSKv>
+
+00000f46 <_GLOBAL__sub_I_timer0_millis>:
+//
+volatile uint8_t rx_Buf[RX_BUF_LEN];
+//
+//SoftwareIrDA
+//
+SoftwareIrDA irPortFore(1);	//For fore infrared transceiver
+ f46:	61 e0       	ldi	r22, 0x01	; 1
+ f48:	8e e9       	ldi	r24, 0x9E	; 158
+ f4a:	90 e0       	ldi	r25, 0x00	; 0
+ f4c:	20 dd       	rcall	.-1472   	; 0x98e <_ZN12SoftwareIrDAC1Eh>
+SoftwareIrDA irPortBack(2);	//For back infrared transceiver
+ f4e:	62 e0       	ldi	r22, 0x02	; 2
+ f50:	89 e9       	ldi	r24, 0x99	; 153
+ f52:	90 e0       	ldi	r25, 0x00	; 0
+ f54:	1c cd       	rjmp	.-1480   	; 0x98e <_ZN12SoftwareIrDAC1Eh>
+
+00000f56 <_GLOBAL__sub_D_timer0_millis>:
+ f56:	89 e9       	ldi	r24, 0x99	; 153
+ f58:	90 e0       	ldi	r25, 0x00	; 0
+ f5a:	5d dd       	rcall	.-1350   	; 0xa16 <_ZN12SoftwareIrDAD1Ev>
+//
+volatile uint8_t rx_Buf[RX_BUF_LEN];
+//
+//SoftwareIrDA
+//
+SoftwareIrDA irPortFore(1);	//For fore infrared transceiver
+ f5c:	8e e9       	ldi	r24, 0x9E	; 158
+ f5e:	90 e0       	ldi	r25, 0x00	; 0
+ f60:	5a cd       	rjmp	.-1356   	; 0xa16 <_ZN12SoftwareIrDAD1Ev>
+
+00000f62 <__mulhi3>:
+ f62:	00 24       	eor	r0, r0
+ f64:	55 27       	eor	r21, r21
+ f66:	04 c0       	rjmp	.+8      	; 0xf70 <__mulhi3+0xe>
+ f68:	08 0e       	add	r0, r24
+ f6a:	59 1f       	adc	r21, r25
+ f6c:	88 0f       	add	r24, r24
+ f6e:	99 1f       	adc	r25, r25
+ f70:	00 97       	sbiw	r24, 0x00	; 0
+ f72:	29 f0       	breq	.+10     	; 0xf7e <__mulhi3+0x1c>
+ f74:	76 95       	lsr	r23
+ f76:	67 95       	ror	r22
+ f78:	b8 f3       	brcs	.-18     	; 0xf68 <__mulhi3+0x6>
+ f7a:	71 05       	cpc	r23, r1
+ f7c:	b9 f7       	brne	.-18     	; 0xf6c <__mulhi3+0xa>
+ f7e:	80 2d       	mov	r24, r0
+ f80:	95 2f       	mov	r25, r21
+ f82:	08 95       	ret
+
+00000f84 <__udivmodsi4>:
+ f84:	a1 e2       	ldi	r26, 0x21	; 33
+ f86:	1a 2e       	mov	r1, r26
+ f88:	aa 1b       	sub	r26, r26
+ f8a:	bb 1b       	sub	r27, r27
+ f8c:	fd 01       	movw	r30, r26
+ f8e:	0d c0       	rjmp	.+26     	; 0xfaa <__udivmodsi4_ep>
+
+00000f90 <__udivmodsi4_loop>:
+ f90:	aa 1f       	adc	r26, r26
+ f92:	bb 1f       	adc	r27, r27
+ f94:	ee 1f       	adc	r30, r30
+ f96:	ff 1f       	adc	r31, r31
+ f98:	a2 17       	cp	r26, r18
+ f9a:	b3 07       	cpc	r27, r19
+ f9c:	e4 07       	cpc	r30, r20
+ f9e:	f5 07       	cpc	r31, r21
+ fa0:	20 f0       	brcs	.+8      	; 0xfaa <__udivmodsi4_ep>
+ fa2:	a2 1b       	sub	r26, r18
+ fa4:	b3 0b       	sbc	r27, r19
+ fa6:	e4 0b       	sbc	r30, r20
+ fa8:	f5 0b       	sbc	r31, r21
+
+00000faa <__udivmodsi4_ep>:
+ faa:	66 1f       	adc	r22, r22
+ fac:	77 1f       	adc	r23, r23
+ fae:	88 1f       	adc	r24, r24
+ fb0:	99 1f       	adc	r25, r25
+ fb2:	1a 94       	dec	r1
+ fb4:	69 f7       	brne	.-38     	; 0xf90 <__udivmodsi4_loop>
+ fb6:	60 95       	com	r22
+ fb8:	70 95       	com	r23
+ fba:	80 95       	com	r24
+ fbc:	90 95       	com	r25
+ fbe:	9b 01       	movw	r18, r22
+ fc0:	ac 01       	movw	r20, r24
+ fc2:	bd 01       	movw	r22, r26
+ fc4:	cf 01       	movw	r24, r30
+ fc6:	08 95       	ret
+
+00000fc8 <__tablejump2__>:
+ fc8:	ee 0f       	add	r30, r30
+ fca:	ff 1f       	adc	r31, r31
+ fcc:	05 90       	lpm	r0, Z+
+ fce:	f4 91       	lpm	r31, Z
+ fd0:	e0 2d       	mov	r30, r0
+ fd2:	09 94       	ijmp
+
+00000fd4 <__do_global_dtors>:
+ fd4:	10 e0       	ldi	r17, 0x00	; 0
+ fd6:	cd e6       	ldi	r28, 0x6D	; 109
+ fd8:	d0 e0       	ldi	r29, 0x00	; 0
+ fda:	03 c0       	rjmp	.+6      	; 0xfe2 <__do_global_dtors+0xe>
+ fdc:	fe 01       	movw	r30, r28
+ fde:	f4 df       	rcall	.-24     	; 0xfc8 <__tablejump2__>
+ fe0:	21 96       	adiw	r28, 0x01	; 1
+ fe2:	ce 36       	cpi	r28, 0x6E	; 110
+ fe4:	d1 07       	cpc	r29, r17
+ fe6:	d1 f7       	brne	.-12     	; 0xfdc <__do_global_dtors+0x8>
+ fe8:	f8 94       	cli
+
+00000fea <__stop_program>:
+ fea:	ff cf       	rjmp	.-2      	; 0xfea <__stop_program>
